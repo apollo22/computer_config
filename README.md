@@ -13,6 +13,7 @@ Contains my desktop configuration description and files
 
 # Administration configuration
   - User managment
+  - Backup configuration
 
 # Desktop configuration
 
