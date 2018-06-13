@@ -5,7 +5,7 @@ Contains my desktop configuration description and files
 # Hardware configuration
   - Partitions
   - RAM Encryption
-  - Power managment
+  - Power managment (https://www.maketecheasier.com/monitor-laptop-battery-usage-linux/)
   - Function keys configuration
   - Network configuration
 
