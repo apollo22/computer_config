@@ -14,6 +14,7 @@ Contains my desktop configuration description and files
 # Administration configuration
   - User managment
   - Backup configuration
+  - Notifications configuration
 
 # Desktop configuration
 
@@ -24,3 +25,20 @@ Contains my desktop configuration description and files
 
 
 # Specific software configuration
+
+
+
+# Other
+  - Infrastructure details
+    - Security
+    - Phones
+    - Online servers
+    - Physical servers and computers
+    - Other networked devices (camera, microphones, actuators, sensors, ...)
+  - Information gathering and notifications
+    - Weather
+    - Local events
+    - Global events (natural catastrophy, war, ...)
+    - Personnal and professionnal life
+  - Backup infrastructure
+  - Notification infrastructure
