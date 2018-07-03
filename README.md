@@ -3,7 +3,7 @@ Contains my desktop configuration description and files
 
 
 # Hardware configuration
-  - Partitions
+  - Storage management (Partitions, Mounting)
   - RAM Encryption
   - Power managment (https://www.maketecheasier.com/monitor-laptop-battery-usage-linux/)
   - Function keys configuration
@@ -19,9 +19,28 @@ Contains my desktop configuration description and files
 # Desktop configuration
 
 
-# Terminal configuration
+# Shells configuration
   - Aliases
   - Prompt
+  - Shortcuts
+  - Display
+  - Functions
+  
+## Outputs management
+  - Audio management
+  - Video management
+  
+## Inputs management
+### Generic
+  - Keyboards
+  - Mices
+  - Touchpads
+  - Microphones
+  - Webcams
+### Specific
+  - HOTAS
+  - Graphic tablets
+  
 
 
 # Specific software configuration
@@ -42,3 +61,5 @@ Contains my desktop configuration description and files
     - Personnal and professionnal life
   - Backup infrastructure
   - Notification infrastructure
+  - Bluetooth management
+  - VPN
