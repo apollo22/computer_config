@@ -20,11 +20,9 @@ Contains my desktop configuration description and files
 
 
 # Shells configuration
-  - Aliases
-  - Prompt
+# Terminals configuration
+  - Fonts
   - Shortcuts
-  - Display
-  - Functions
   
 ## Outputs management
   - Audio management
