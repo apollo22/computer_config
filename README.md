@@ -31,6 +31,7 @@ Contains my desktop configuration description and files
 ## Inputs management
 ### Generic
   - Keyboards
+    - Shortcut to change keyboard layout: setxkbmap "fr,us" -option grp:alt_shift_toggle
   - Mices
   - Touchpads
   - Microphones
