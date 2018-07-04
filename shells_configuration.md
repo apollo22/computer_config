@@ -1,4 +1,4 @@
-#Shells configuration
+# Shells configuration
 
 ## Configuration files
 
