@@ -29,18 +29,6 @@ Contains my desktop configuration description and files
   - Video management
   
 ## Inputs management
-### Generic
-  - Keyboards
-    - Shortcut to change keyboard layout: setxkbmap "fr,us" -option grp:alt_shift_toggle
-  - Mices
-  - Touchpads
-  - Microphones
-  - Webcams
-### Specific
-  - HOTAS
-  - Graphic tablets
-  
-
 
 # Specific software configuration
 
