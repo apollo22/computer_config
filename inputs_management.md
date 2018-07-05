@@ -14,7 +14,7 @@ When a line is crossed, it means I don't think it is possible to implement the d
 
 | Mouvement             | Desired Actions       | libinput | mtrack |
 | ---                   | ---                   | ---      | ---    |
-| 1 finger  touch        | left click            |   [ ]    |  [ ]   |
+| 1 finger  touch        | left click            | - [ ]    |  [ ]   |
 | 2 fingers touch        | right click           |   [ ]    |  [ ]   |
 | 3 fingers touch        | middle click          |   [ ]    |  [ ]   |
 | 4 fingers touch        | ?                     |   [ ]    |  [ ]   |
