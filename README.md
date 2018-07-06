@@ -32,7 +32,9 @@ Contains my desktop configuration description and files
 
 # Specific software configuration
 
-
+# Security
+  git passwords call
+  ssh passwords call
 
 # Other
   - Infrastructure details
