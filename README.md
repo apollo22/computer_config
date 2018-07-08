@@ -1,5 +1,5 @@
 # computer_config
-Contains my desktop configuration description and files
+Describes my system and holds my configuration files in **config_files** folder.
 
 
 # Hardware configuration
@@ -26,6 +26,7 @@ Contains my desktop configuration description and files
   
 ## Outputs management
   - Audio management
+    - pulseaudio
   - Video management
   
 ## Inputs management
@@ -35,6 +36,12 @@ Contains my desktop configuration description and files
 # Security
   git passwords call
   ssh passwords call
+
+# Network
+  - VPN
+    - OpenVPN
+  - DNS
+    - openresolv
 
 # Other
   - Infrastructure details
@@ -51,4 +58,9 @@ Contains my desktop configuration description and files
   - Backup infrastructure
   - Notification infrastructure
   - Bluetooth management
-  - VPN
+  - Shortcuts management
+    - i3conf file
+    - xbindkeys
+  - Remote Desktop
+    - Remmina
+      - Install libvncserver for VNC support and freerdp for RDP support
