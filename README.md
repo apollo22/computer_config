@@ -34,8 +34,12 @@ Describes my system and holds my configuration files in **config_files** folder.
 # Specific software configuration
 
 # Security
-  git passwords call
-  ssh passwords call
+  - UEFI
+    - Secure boot
+    - Access from OS
+    - Preinstalled keys (Windows, UEFI shell)
+  - git passwords call
+  - ssh passwords call
 
 # Network
   - VPN
