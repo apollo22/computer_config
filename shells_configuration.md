@@ -19,3 +19,6 @@ Aliases are defined in two files, depending on the shell used :
 Managed by terminal ?
 
 ## Functions
+
+## Other
+https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
