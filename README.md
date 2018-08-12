@@ -68,3 +68,5 @@ Describes my system and holds my configuration files in **config_files** folder.
   - Remote Desktop
     - Remmina
       - Install libvncserver for VNC support and freerdp for RDP support
+  - Auto mounting some devices
+    - USB Disks
