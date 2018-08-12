@@ -6,7 +6,7 @@ ls /sys/firmware/efi/efivars
 
 # Connect to internet 
 
-  ## If not working, check network controller if using wifi or wired connection
+  ## If not working, check if network controller module is loaded
   lspci -k | grep -A 4 Network controller
   dmesg | grep <kernel modules>
   
