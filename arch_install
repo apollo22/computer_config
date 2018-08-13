@@ -180,12 +180,15 @@ pacman -S xorg-xinit # Why is it not in 'xorg' package group ?
   # Add exec i3
 
 # Install i3wm
-pacman -S i3 # 'i3' is a package group
+pacman -S i3 dmenu # 'i3' is a package group
 
 # Install terminator and firefox
 terminator
 firefox
 openssh
+
+# Configure fonts
+fontconfig
 
 pacman -S rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
 dhclient
