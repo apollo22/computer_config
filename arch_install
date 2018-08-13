@@ -92,7 +92,8 @@ ls /sys/firmware/efi/efivars
   rankmirrors -n 20 /etc/pacman.d/https_mirrorlist > /etc/pacman.d/mirrorlist
 
 # Install
-  pacstrap /mnt base base-devel intel-ucode zsh vim git wpa_supplicant
+  pacstrap /mnt base base-devel intel-ucode zsh vim git wpa_supplicant dialog
+  # 'dialog' is for 'wifi-menu'
 
 # Generate fstab file based on UUID
   genfstab -U /mnt >> /mnt/etc/fstab
@@ -153,19 +154,44 @@ ls /sys/firmware/efi/efivars
 # Reboot
   reboot
   
-  
-  bcfg boot add 3 FS0:\EFI\refind\refind_x64.efi "rEFInd"
+# Access EFI Shell
+  map # List devices
+  <device>: # Access device
+  bcfg boot dump # List boot devices
+  bcfg boot add <number> FS0:\<path_to_file\grubx64.efi "GRUB"
 
 ### Post Install
 
 # Update all packages
 pacman -Syu
 
-# Install useful packets
-pacman -S nmcli rsync smartmontools sudo tcpdump wget curl dnsutils mtr ntp nmap
+# Connect to WIFI with NetworkManager
+pacman -S networkmanager # nmcli in 'networkmanager' packet
+systemctl enable NetworkManager
+systemctl start NetworkManager
+nmcli dev wifi connect <ssid> password <password>
+
+# Install and configure Xorg
+pacman -S xorg # 'xorg' is a package group
+pacman -S xorg-xinit # Why is it not in 'xorg' package group ?
+# Configure zshrc
+  # Add launch startx
+# Configure xinitrc
+  # Add exec i3
+
+# Install i3wm
+pacman -S i3 # 'i3' is a package group
+
+# Install terminator and firefox
+terminator
+firefox
+openssh
+
+pacman -S rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
 dhclient
 dnsmasq
-networkmanager
 keepassxc
+
+
 
 # Install AUR Helper
