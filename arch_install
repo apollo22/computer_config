@@ -52,6 +52,8 @@ ls /sys/firmware/efi/efivars
     vgextend <volume_group> <physical_volume> # Add Physical Volume to Volume Group
     # Create Logical Volume
     lvcreate -L <size> <volume_group> -n <logical_volume_name>
+    lvcreate -l +100%FREE <volume_group> -n <logical_volume_name> # To fill the rest of the Volume Group with one Logical Volume
+
 
 # Setup swap
   mkswap <device>
@@ -64,27 +66,106 @@ ls /sys/firmware/efi/efivars
   # /boot partition: ext4
   mkfs.ext <device>
   # / (root) partition: ext4
+  mkfs.ext <device>
 
 # Mount the filesystems
-## Mount the file system on the / (root) partition to /mnt
-  # Mount / (root)
-  mount <device> /mnt
+  # Mount / (root) to /mnt
+  mount <device> /mnt -o noatime
   # Mount /boot to /mnt/boot
   mkdir /mnt/boot
   mount <device> /mnt/boot
-  # Mount EFI System Partition to /mnt/boot/efi (not EFISTUB)
+  # Mount EFI System Partition to /mnt/efi (not EFISTUB)
+  mkdir /mnt/efi
+  mount <device> /mnt/efi
   
+# Update mirror list
+  # Install necessary package for 'rankmirrors'
+  pacman -Su # Update local cache
+  pacman -Sy pacman-contrib # Contains /usr/bin/rankmirrors
+  # Backup previous mirrorlist
+  cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+  # Download latest https mirrorlist
+  curl -o /etc/pacman.d/https_mirrorlist https://www.archlinux.org/mirrorlist/all/https/
+  # Uncomment all mirrors
+  sed -i 's/^#Server/Server/' /etc/pacman.d/https_mirrorlist
+  # Rank mirrors
+  rankmirrors -n 20 /etc/pacman.d/https_mirrorlist > /etc/pacman.d/mirrorlist
 
+# Install
+  pacstrap /mnt base base-devel intel-ucode zsh vim git wpa_supplicant
+
+# Generate fstab file based on UUID
+  genfstab -U /mnt >> /mnt/etc/fstab
+
+# Chroot in system
+  arch-chroot /mnt
+
+# Set time (difference with first timedatectl ?)
+  ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+  hwclock --systohc
+
+# Localization
+  # Uncomment en_US.UTF-8 UTF-8 and other needed locales in /etc/locale.gen
+  # Generate locales
+  locale-gen
+  # Set the LANG variable in /etc/locale.conf
+  echo LANG=en_US.UTF-8 > /etc/local.conf
+  
+# Network Configuration
+  # Create hostname file
+  echo <hostname> > /etc/hostname
+  # Configure localhost
+  echo 127.0.0.1       localhost > /etc/hosts
+  echo ::1             localhost ip6-localhost ip6-loopback >> /etc/host
+  echo ff02::1         ip6-allnodes >> /etc/host
+  echo ff02::2         ip6-allrouters >> /etc/host
+
+# Set root password
+  passwd
+  
+# Add user with home folder and zsh shell.
+  useradd -m -g users -G wheel -s /bin/zsh MYUSERNAME
+  passwd MYUSERNAME
+  
+# Allow 'wheel' group to execute any command with sudo
+  # Uncomment # %wheel ALL=(ALL) ALL with 'visudo', 'sudo' package is in 'base-devel'
+  visudo
+  
+# Initramfs
+  # Add LVM2 hook
+  Add lvm2 in /etc/mkinitcpio.conf, in HOOKS=(base ...)
+  # Regenerate initrd image
+  mkinitcpio -p linux
+  
+# Install GRUB
+  pacman -S grub
+  grub-mkconfig -o /boot/grub/grub.cfg
+  grub-install --target=x86_64-efi --efi-directory=efi --bootloader-id=GRUB
+  # It is normal if you get 'WARNING: Failed to connect to lvmetad. (source: https://wiki.archlinux.org/index.php/GRUB#Warning_when_installing_in_chroot)
+  
+# Exit new system with 'exit' or Ctrl+D
+  exit
+
+# Unmount all partitions
+  umount -R /mnt
+  swapoff -a
+ 
+# Reboot
+  reboot
+  
+  
+  bcfg boot add 3 FS0:\EFI\refind\refind_x64.efi "rEFInd"
 
 ### Post Install
 
 # Update all packages
 pacman -Syu
 
-# Enable ssh on machine
-pacman -S openssh && systemctl enable --now sshd.socket
-
 # Install useful packets
-pacman -S nmcli git
+pacman -S nmcli rsync smartmontools sudo tcpdump wget curl dnsutils mtr ntp nmap
+dhclient
+dnsmasq
+networkmanager
+keepassxc
 
 # Install AUR Helper
