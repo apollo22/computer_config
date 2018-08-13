@@ -33,7 +33,7 @@ ls /sys/firmware/efi/efivars
 
 # Partition hard drives
   # Partitions on drive
-  ## UEFI System Partition: 550 MiB (Not on LVM or Software RAID) (source: http://www.rodsbooks.com/efi-bootloaders/principles.html)
+  ## EFI System Partition: 550 MiB (Not on LVM or Software RAID) (source: http://www.rodsbooks.com/efi-bootloaders/principles.html)
   ## /boot Partition: 200 MiB (Not on LVM or Software RAID) (source: https://wiki.archlinux.org/index.php/partitioning#.2Fboot)
   ## LVM Partition: The rest of the disk
     # Partitions on LVM
@@ -53,12 +53,27 @@ ls /sys/firmware/efi/efivars
     # Create Logical Volume
     lvcreate -L <size> <volume_group> -n <logical_volume_name>
 
-# Format partition
-  # UEFI System Partition: FAT32
-  mkfs.fat -F32 /dev/sdX1
-  # /boot partition: 
-  # swap partition: 
+# Setup swap
+  mkswap <device>
+  swapon <device>
+  # fstab will be updated later with 'genfstab'
 
+# Format partitions
+  # EFI System Partition: FAT32
+  mkfs.fat -F32 /dev/sdX1
+  # /boot partition: ext4
+  mkfs.ext <device>
+  # / (root) partition: ext4
+
+# Mount the filesystems
+## Mount the file system on the / (root) partition to /mnt
+  # Mount / (root)
+  mount <device> /mnt
+  # Mount /boot to /mnt/boot
+  mkdir /mnt/boot
+  mount <device> /mnt/boot
+  # Mount EFI System Partition to /mnt/boot/efi (not EFISTUB)
+  
 
 
 ### Post Install
