@@ -19,13 +19,6 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 
 In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it.
 
-
-
-trap_exit() {
-    . "$HOME/.bash_logout"
-}
-trap trap_exit EXIT
-
 #### Sources
 
 - http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
@@ -44,7 +37,7 @@ Aliases are defined in many files in the ~/.config/shells/aliases/ folder :
   - **temp_docs** for aliases used to navigate to directories and edit files that I am currently working on and that I have not sorted yet.
   - **<project_name>_docs** for aliases used to navigate to directories and edit files that are bound to projects.
   
-The ***_docs** files use the $DOCS_EDITOR environment variable, set in **shells**.
+The **_docs** files use the $DOCS_EDITOR environment variable, set in **shells**.
 
 ## Prompt
 
