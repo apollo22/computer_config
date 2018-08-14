@@ -4,6 +4,8 @@
   - **.ssh**: my ssh keys
   - **Downloads**: my downloads
   - **documents**: my documents
+    - **computer_files**: all my computer related files
+      - **git**: all my git repositories
 
 
 # Notes
