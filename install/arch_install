@@ -185,18 +185,10 @@ pacman -S i3 dmenu # 'i3' is a package group
 # Install libinput for Xorg (not necessary for Wayland)
 pacman -S xf86-input-libinput
 
-# Other installs
-xterm
-firefox
-openssh
+
 
 # Configure fonts
 fontconfig
-
-pacman -S rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
-dhclient
-dnsmasq
-keepassxc
 
 # For bluetooth headset
 pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
@@ -223,3 +215,15 @@ exit
 
 
 # Install AUR Helper
+
+
+# Other packages
+xterm
+firefox
+openssh
+keepassxc
+ranger
+
+rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
+dhclient
+dnsmasq
