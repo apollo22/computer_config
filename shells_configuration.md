@@ -10,9 +10,9 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 
 ### Bash specific configuration files
 
-http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
-https://mywiki.wooledge.org/DotFiles
-http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
+- http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
+- https://mywiki.wooledge.org/DotFiles
+- http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
 
 #### Login shells
 
