@@ -1,6 +1,7 @@
 # Shells configuration
 
 ## Configuration files
+---
 
 
 Shells specific files remains in the location where they are defined, however, they try to load common files, namely:
