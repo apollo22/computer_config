@@ -11,11 +11,19 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 ### Bash specific configuration files
 
 http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
+https://mywiki.wooledge.org/DotFiles
 
-Bash starts by sourcing
+#### Login shells
 
+When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**
 
-~/.bash_profile, ~/.bash_login, and ~/.profile
+When an interactive login shell exits, or a non-interactive login shell executes the `exit` builtin command : **~/.bash_logout**, if it exists
+
+#### Interactive non login shells
+
+When started, executes **~/.bashrc**
+
+#### Non login non interactive shells
 
 ### Zsh specifics configuration files
 
