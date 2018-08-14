@@ -92,8 +92,9 @@ ls /sys/firmware/efi/efivars
   rankmirrors -n 20 /etc/pacman.d/https_mirrorlist > /etc/pacman.d/mirrorlist
 
 # Install
-  pacstrap /mnt base base-devel intel-ucode zsh vim git wpa_supplicant dialog
+  pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog
   # 'dialog' is for 'wifi-menu'
+  # gvim adds support for GTK/X, specifically the ```+clipboard``` feature (source: https://wiki.archlinux.org/index.php/Vim#Installation)
 
 # Generate fstab file based on UUID
   genfstab -U /mnt >> /mnt/etc/fstab
