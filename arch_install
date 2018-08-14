@@ -182,8 +182,11 @@ pacman -S xorg-xinit # Why is it not in 'xorg' package group ?
 # Install i3wm
 pacman -S i3 dmenu # 'i3' is a package group
 
-# Install terminator and firefox
-terminator
+# Install libinput for Xorg (not necessary for Wayland)
+pacman -S xf86-input-libinput
+
+# Other installs
+xterm
 firefox
 openssh
 
