@@ -8,6 +8,7 @@ To understand OpenSSH ssh client configuration files, check ```man ssh_config```
 
 The following files are my ssh client configuration files :
 
+- **/etc/ssh/ssh_config**: I don't use this file for now
 -  **~/.ssh/config** points to ~/.config/ssh/config, so that when OpenSSH will support 'XDG Base Directory Specification', I will only have to delete it.
 - **~/.config/ssh/config** references public, private and temp configuration files.
 - **~/.config/ssh/public** is referenced by ~/.config/ssh/config and contains the configuration I am comfortable sharing on the Internet.
@@ -18,3 +19,7 @@ The following files are my ssh client configuration files :
 [TODO] Almost all those files have shell aliases to edit them. 
 
 ### SSH Server Configuration
+
+To understand OpenSSH ssh server configuration file, check ```man sshd_config```
+
+- **/etc/ssh/sshd_config**
