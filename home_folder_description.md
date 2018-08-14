@@ -1,9 +1,9 @@
 # Home Folder Description
 
   - **.config**: my config files / dot files
-  -**.ssh**: my ssh keys
-  -**Downloads**: my downloads
-  -**documents**: my documents
+  - **.ssh**: my ssh keys
+  - **Downloads**: my downloads
+  - **documents**: my documents
 
 
 # Notes
