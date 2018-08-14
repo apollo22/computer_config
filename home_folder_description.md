@@ -2,8 +2,8 @@
 
 My entire $HOME folder is backed up and synchronised between my computers (alhough some merge errors can appear, which I have to resolve).
 
-  - **.config**: my config / dot files
-  - **.ssh**: my ssh keys
+## Visible files
+
   - **Downloads**: my downloads
   - **documents**: my documents
     - **computer_files**: all my computer related files
@@ -19,6 +19,10 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
     - **professionnal_documents**: professionnal documents, can hold projects
     - **public_projects_documents**: all my personnal public projects
 
+## Hidden files
+
+  - **.config**: my config / dot files
+  - **.ssh**: my ssh keys
 
 # Notes
 About **~/documents** and **~/Downloads**, the second one is with an uppercase letter so that I can just type 'D' to autocomplete and not 'Dow'.
