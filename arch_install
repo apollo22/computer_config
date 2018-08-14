@@ -198,6 +198,28 @@ dhclient
 dnsmasq
 keepassxc
 
+# For bluetooth headset
+pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+systemctl enable bluetooth
+systemctl start bluetooth
+
+pulseaudio --start
+bluetoothctl
+power on
+agent on
+default-agent
+scan on
+# Set device in pairing mode, this should prompt a new device
+pair <MAC Address>
+connect <MAC Address>
+trust <MAC Address>
+scan off
+exit
+
+# Add the following to '/etc/pulse/default.pa'
+  ### automatically switch to newly-connected devices
+  load-module module-switch-on-connect
+
 
 
 # Install AUR Helper
