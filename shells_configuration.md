@@ -1,7 +1,6 @@
 # Shells configuration
 
 ## Configuration files
----
 
 Shells specific files remains in the location where they are defined, however, they try to load common files, namely:
   - **~/.config/shells/shellsrc** loaded from ~/.config/shells/bashrc or ~/.zshrc
@@ -14,19 +13,13 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 - https://mywiki.wooledge.org/DotFiles
 - http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
 
-#### Login shells
-
-When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**.
-
-When an interactive login shell exits, or a non-interactive login shell executes the `exit` builtin command, executes**~/.bash_logout**, if it exists.
-
-#### Interactive non login shells
-
-When started, executes **~/.bashrc**.
-
-#### Non interactive non login shells
-
-When started, expands and executes the expanded file in $ENV.
+-  **Login shells**
+  - When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**.
+  - When an interactive login shell exits, or a non-interactive login shell executes the `exit` builtin command, executes**~/.bash_logout**, if it exists.
+- **Interactive non login shells**
+  - When started, executes **~/.bashrc**.
+- **Non interactive non login shells**
+  - When started, expands and executes the expanded file in $ENV.
 
 ### Zsh specifics configuration files
 
