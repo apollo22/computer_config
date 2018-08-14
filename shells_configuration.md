@@ -29,7 +29,7 @@ In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it
 
 ## Aliases
 
-Aliases are defined in many files in the ~/.config/shells/aliases/ folder :
+Aliases are defined in many files in the **~/.config/shells/aliases/** folder :
   - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the _docs aliases.
   - **<shell_name>** for aliases used by a specific shell, loaded by related <shell_name>rc.
   - **public_docs** for aliases used to navigate to directories and edit files I share with everyone on Internet.
