@@ -31,7 +31,7 @@ In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it
 
 Aliases are defined in many files in the ~/.config/shells/aliases/ folder :
   - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the documents_aliases.
-  - **<shell_name>** for aliases used by a specific shell, loaded by related ~/.config/shells/<shell_name>rc.
+  - **<shell_name>** for aliases used by a specific shell, loaded by related <shell_name>rc.
   - **public_docs** for aliases used to navigate to directories and edit files I share with everyone on Internet.
   - **private_docs** for aliases used to navigate to directories and edit files that are privates.
   - **temp_docs** for aliases used to navigate to directories and edit files that I am currently working on and that I have not sorted yet.
