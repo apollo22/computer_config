@@ -2,6 +2,8 @@
 
 ## Configuration files
 
+~/.bash_profile, ~/.bash_login, and ~/.profile
+
 Shells specific files remains in the location where they are defined, however, they try to load common files, namely:
   - **~/.config/shells/shellsrc** loaded from ~/.bashrc or ~/.zshrc
 
