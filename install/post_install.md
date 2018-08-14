@@ -2,16 +2,17 @@
 
 
 ## Configure Desktop Environment
-- Configure display server
-- Configure windows manager
-- Configure dipslay manager (optionnal)
+- [] Configure display server
+- [ ] Configure windows manager
+- [x] Configure dipslay manager (optionnal)
 - Configure lockscreen
 - Configure fonts
 - Configure shortcuts
 - Configure notifications
 - Configure status bar
 
-
+- Configure systemd
+  - Configure logind (optionnal if using a display manager)
 
 
 ## Other / Unsorted
