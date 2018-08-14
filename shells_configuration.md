@@ -4,13 +4,16 @@
 
 
 Shells specific files remains in the location where they are defined, however, they try to load common files, namely:
-  - **~/.config/shells/shellsrc** loaded from ~/.bashrc or ~/.zshrc
+  - **~/.config/shells/shellsrc** loaded from ~/.config/shells/bashrc or ~/.zshrc
 
 For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shells**.
 
 ### Bash specific configuration files
 
 http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
+
+Bash starts by sourcing
+
 
 ~/.bash_profile, ~/.bash_login, and ~/.profile
 
@@ -35,3 +38,5 @@ Managed by terminal ?
 
 ## Other
 https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+
+If first login of the day, display news, else, do not display anything
