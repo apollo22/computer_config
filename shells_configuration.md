@@ -9,9 +9,12 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/shells_aliase
 
 ## Aliases
 
-Aliases are defined in two files, depending on the shell used :
+Aliases are defined in many files, depending on the shell used :
   - **~/.config/shells/shells_aliases** for aliases used by all shells
   - **~/.config/shells/<shell_name>_aliases** for aliases used by a specific shell
+  - **~/.config/shells/documents_aliases/public** for aliases used to navigate to directories and edit files I share with everyone on Internet
+  - **~/.config/shells/documents_aliases/private** for aliases used to navigate to directories and edit files that are privates
+  - **~/.config/shells/documents_aliases/<project_name>** for aliases used to navigate to directories and edit files that are bound to projects
   
 ## Prompt
 
