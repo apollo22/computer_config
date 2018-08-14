@@ -7,12 +7,12 @@
 - [x] Configure dipslay manager (optionnal)
 - [ ] Configure lockscreen
 - [ ] Configure fonts
-- Configure shortcuts
-- Configure notifications
-- Configure status bar
+- [ ] Configure shortcuts
+- [ ] Configure notifications
+- [ ] Configure status bar
 
-- Configure systemd
-  - Configure logind (optionnal if using a display manager)
+- [ ] Configure systemd
+  - [ ] Configure logind (optionnal if using a display manager)
 
 
 ## Other / Unsorted
@@ -20,22 +20,23 @@
 
 - [ ] Add bluetooth devices
   - [ ] headset
-  - speakers
-  - mouse
-  - keyboard
+  - [ ] speakers
+  - [ ] mouse
+  - [ ] keyboard
   
-- Configure SSH client
-- Configure SSH server
-- Configure mail client
-  - Thunderbird
+- [ ] Configure SSH client
+- [ ] Configure SSH server
+- [ ] Configure mail client
+  - [ ] Thunderbird
 
-- Configure git
+- [ ] Configure git
 
-- Configure terminal emulators
-- Configure sound server
-  - PulseAudio
+- [ ] Configure terminal emulators
+- [ ] Configure sound server
+  - [ ] PulseAudio
   
-- Configure Firefox
-- Configure Vim
-- Configure Shells
-  - Zsh
+- [ ] Configure Firefox
+- [ ] Configure Vim
+- [ ] Configure Shells
+  - [ ] Zsh
+  - [ ] Bash
