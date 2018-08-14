@@ -9,7 +9,7 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 
 ### Bash specific configuration files
 
--  **Login shells**
+- **Login shells**
   - When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**.
   - When an interactive login shell exits, or a non-interactive login shell executes the `exit` builtin command, executes**~/.bash_logout**, if it exists.
 - **Interactive non login shells**
