@@ -3,7 +3,7 @@
 ## Configuration files
 
 Shells specific files remains in the location where they are defined, however, they try to load common files, namely:
-  - **~/.config/shells/shellsrc** loaded from ~/.config/shells/bashrc or ~/.zshrc
+  - **~/.config/shells/shellsrc** loaded from ~/.config/shells/bashrc or ~/.zshrc.
 
 For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shells**.
 
@@ -17,13 +17,22 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 - **Non interactive non login shells**
   - When started, expands and executes the expanded file in $ENV.
 
+In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it.
+
+
+
+trap_exit() {
+    . "$HOME/.bash_logout"
+}
+trap trap_exit EXIT
+
 #### Sources
 
 - http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
 - https://mywiki.wooledge.org/DotFiles
 - http://www.linuxfromscratch.org/blfs/view/6.3/postlfs/profile.html
 
-### Zsh specifics configuration files
+### Zsh specific configuration files
 
 ## Aliases
 
@@ -35,6 +44,8 @@ Aliases are defined in many files in the ~/.config/shells/aliases/ folder :
   - **temp_docs** for aliases used to navigate to directories and edit files that I am currently working on and that I have not sorted yet.
   - **<project_name>_docs** for aliases used to navigate to directories and edit files that are bound to projects.
   
+The ***_docs** files use the $DOCS_EDITOR environment variable, set in **shells**.
+
 ## Prompt
 
 ## Shortcuts
