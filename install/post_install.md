@@ -2,11 +2,11 @@
 
 
 ## Configure Desktop Environment
-- [] Configure display server
+- [ ] Configure display server
 - [ ] Configure windows manager
 - [x] Configure dipslay manager (optionnal)
-- Configure lockscreen
-- Configure fonts
+- [ ] Configure lockscreen
+- [ ] Configure fonts
 - Configure shortcuts
 - Configure notifications
 - Configure status bar
@@ -18,8 +18,8 @@
 ## Other / Unsorted
 - Configure backups
 
-- Add bluetooth devices
-  - headset
+- [ ] Add bluetooth devices
+  - [ ] headset
   - speakers
   - mouse
   - keyboard
