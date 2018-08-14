@@ -1,11 +1,21 @@
 # Home Folder Description
 
-  - **.config**: my config files / dot files
+  - **.config**: my config / dot files
   - **.ssh**: my ssh keys
   - **Downloads**: my downloads
   - **documents**: my documents
     - **computer_files**: all my computer related files
-      - **git**: all my git repositories
+      - **git**: unsorted git repositories
+      - **softwares**: all my software related files
+    - **learning_documents**: documents to learn about various subjects
+        -**softwares_documentation**: all my software documentation
+    - **gtd**: everything for my personnal organisation
+    - **medias**: every medias I own
+      - **music**: my music files
+    - **personnal_documents**: my personnal documents
+    - **personnal_notes**: notes I take about various things
+    - **professionnal_documents**: professionnal documents, can hold projects
+    - **public_projects_documents**: all my personnal public projects
 
 
 # Notes
