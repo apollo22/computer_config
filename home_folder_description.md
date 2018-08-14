@@ -1,5 +1,7 @@
 # Home Folder Description
 
+My entire $HOME folder is backed up and synchronised between my computers (alhough some merge errors can appear, which I have to resolve).
+
   - **.config**: my config / dot files
   - **.ssh**: my ssh keys
   - **Downloads**: my downloads
