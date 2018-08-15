@@ -166,6 +166,9 @@ ls /sys/firmware/efi/efivars
 # Update all packages
 pacman -Syu
 
+# Install useful packages
+pacman -S wget curl
+
 # Connect to WIFI with NetworkManager
 pacman -S networkmanager # nmcli in 'networkmanager' packet
 systemctl enable NetworkManager
@@ -239,6 +242,6 @@ ranger
 ark
 alsamixer
 
-rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
+rsync smartmontools tcpdump dnsutils mtr ntp nmap
 dhclient
 dnsmasq
