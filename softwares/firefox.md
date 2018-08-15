@@ -13,7 +13,7 @@ URL: about:config, set browser.fullscreen.autohide to false
 
 ## Bookmarks toolbar in fullscreen
 
-- Open your Firefox profile folder, which is **~/.mozilla/firefox/<hash>.<profile_name>** on Linux. If you can’t find it, you can open about:support in your Firefox. and click the “Open Directory” button in the “Profile Directory” field.
+- Open your Firefox profile folder, which is **~/.mozilla/firefox/<hash>.<profile_name>** on Linux. If you can’t find it, you can open **about:support** as an URL in your Firefox. and click the “Open Directory” button in the “Profile Directory” field.
 - Create a folder named **chrome** if it doesn’t exist yet.
 - Create a file called **userChrome.css** in the chrome folder, copy the following content into it and save.
 
