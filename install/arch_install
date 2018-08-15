@@ -242,6 +242,7 @@ keepassxc
 ranger
 ark
 alsamixer
+lsof ?
 
 # Install tldr
 pacman -S tldr
