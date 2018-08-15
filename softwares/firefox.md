@@ -17,13 +17,14 @@ URL: about:config, set browser.fullscreen.autohide to false
 - Create a folder named chrome if it doesn’t exist yet.
 - Create a file called userChrome.css in the chrome folder, copy the following content into it and save.
 
-
-`@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+```
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
 
 /* full screen toolbars */
 #navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {
    visibility:visible!important;
-}`
+}
+```
 - Restart your Firefox
 
 Source: https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fullscreen.html
