@@ -19,6 +19,8 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 
 In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it.
 
+I also use other bash specific configuration files in **~/.config/shells/bash** that I source from **~/.bashrc**
+
 #### Sources
 
 - http://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
