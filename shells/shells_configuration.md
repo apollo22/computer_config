@@ -39,7 +39,7 @@ Aliases are defined in many files in the **~/.config/shells/aliases** folder :
   
 The **_docs** files use the $DOCS_EDITOR environment variable, set in **shells**.
 
-I use **global aliases** and ** 
+I use **global aliases** and **suffix aliases** in shells that support it.
 
 ## Prompt
 
