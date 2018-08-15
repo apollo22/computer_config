@@ -225,6 +225,7 @@ openssh
 keepassxc
 ranger
 ark
+alsamixer
 
 rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
 dhclient
