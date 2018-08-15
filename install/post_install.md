@@ -15,6 +15,8 @@
 - [ ] Configure shells
   - [x] Configure prompts
   - [ ] Configure aliases
+  - [ ] Zsh
+  - [ ] Bash
 
 - [ ] Configure systemd
   - [ ] Configure logind (optionnal if using a display manager)
@@ -42,6 +44,9 @@
   
 - [ ] Configure Firefox
 - [ ] Configure Vim
-- [ ] Configure Shells
-  - [ ] Zsh
-  - [ ] Bash
+- [ ] Configure lockscreen
+  - [ ] Configure shortcut
+- [ ] Configure power
+  - [ ] Configure sleep
+    - [ ] Configure closing lid
+  - [ ] Configure hibernation
