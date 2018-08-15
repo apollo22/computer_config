@@ -236,6 +236,7 @@ rm -rf aurman-git/
 # Other packages
 xterm
 firefox
+thunderbird
 openssh
 keepassxc
 ranger
