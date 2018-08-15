@@ -243,6 +243,9 @@ ranger
 ark
 alsamixer
 
+# Install tldr
+pacman -S tldr
+
 rsync smartmontools tcpdump dnsutils mtr ntp nmap
 dhclient
 dnsmasq
