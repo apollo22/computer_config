@@ -224,6 +224,7 @@ firefox
 openssh
 keepassxc
 ranger
+ark
 
 rsync smartmontools tcpdump wget curl dnsutils mtr ntp nmap
 dhclient
