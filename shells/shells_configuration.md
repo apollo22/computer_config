@@ -39,7 +39,12 @@ Aliases are defined in many files in the **~/.config/shells/aliases** folder :
   
 The **_docs** files use the $DOCS_EDITOR environment variable, set in **shells**.
 
+I use **global aliases** and ** 
+
 ## Prompt
+
+left prompt
+right prompt
 
 ## Shortcuts
 Managed by terminal ?
@@ -50,3 +55,17 @@ Managed by terminal ?
 https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
 If first login of the day, display news, else, do not display anything
+
+## Shell features
+path expansion
+path replacement
+auto-completion
+spelling correction
+suffix aliases
+syntax highlighting (valid / invalid command)
+
+?
+extended globbing
+environment variable editing
+programmable file renaming
+history substring search (same as Ctrl + R ?)
