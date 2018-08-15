@@ -46,6 +46,14 @@ I use **global aliases** and **suffix aliases** in shells that support it.
 left prompt
 right prompt
 
+### Zsh prompt
+
+http://www.nparikh.org/unix/prompt.php
+
+**Simple prompt**: 
+- PROMPT=$'\e[0;32m%n\e[0;30m@\e[0;34m%m: \e[1;31m%~ \e[0;30m%# '
+- RPROMPT='%t'
+
 ## Shortcuts
 Managed by terminal ?
 
