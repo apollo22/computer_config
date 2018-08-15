@@ -215,7 +215,19 @@ exit
 
 
 
-# Install AUR Helper
+# Install AUR Helper: aurman
+
+## Install PGP key for aurman
+wget https://github.com/polygamma.gpg
+gpg --import polygamma.gpg
+rm polygamma.gpg
+
+## Install aurman
+git clone https://aur.archlinux.org/aurman-git.git
+cd aurman-git/
+makepkg -si --needed --noconfirm # -s: install missing dependencies, -i: install, --needed: do not reinstall up-to-date targets
+cd ..
+rm -rf aurman-git/
 
 
 # Other packages
