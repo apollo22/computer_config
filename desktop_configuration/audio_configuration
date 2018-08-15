@@ -1,0 +1,7 @@
+# Audio configuration
+
+I use pulse audio
+
+## Default sink
+
+Headset > External Speakers > Internal Speakers
