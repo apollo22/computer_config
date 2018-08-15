@@ -77,3 +77,6 @@ extended globbing
 environment variable editing
 programmable file renaming
 history substring search (same as Ctrl + R ?)
+
+## Shell syntax comparison
+http://hyperpolyglot.org/unix-shells
