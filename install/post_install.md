@@ -2,14 +2,19 @@
 
 
 ## Configure Desktop Environment
-- [ ] Configure display server
-- [ ] Configure windows manager
 - [x] Configure dipslay manager (optionnal)
+- [ ] Configure display server
+  - [ ] Configure inputs (except sound)
+  - [ ] Configure video outputs
+- [ ] Configure windows manager
 - [ ] Configure lockscreen
 - [ ] Configure fonts
 - [ ] Configure shortcuts
 - [ ] Configure notifications
 - [ ] Configure status bar
+- [ ] Configure shells
+  - [x] Configure prompts
+  - [ ] Configure aliases
 
 - [ ] Configure systemd
   - [ ] Configure logind (optionnal if using a display manager)
@@ -19,10 +24,10 @@
 - Configure backups
 
 - [ ] Add bluetooth devices
-  - [ ] headset
-  - [ ] speakers
-  - [ ] mouse
-  - [ ] keyboard
+  - [x] headset
+  - [x] speakers
+  - [x] mouse
+  - [x] keyboard
   
 - [ ] Configure SSH client
 - [ ] Configure SSH server
