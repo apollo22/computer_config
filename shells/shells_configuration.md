@@ -10,15 +10,13 @@ For common aliases, **shellsrc** loads the file **~/.config/shells/aliases/shell
 ### Bash specific configuration files
 
 - **Login shells**
-  - When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**.
+  - When started, executes **/etc/profile**, then executes one of the following files (searched in the given order) **~/.bash_profile**, **~/.bash_login** or **~/.profile**. **__I__** also source **~/.bashrc** in **~/.bash_profile**.
   - When an interactive login shell exits, or a non-interactive login shell executes the `exit` builtin command, executes**~/.bash_logout**, if it exists.
 - **Interactive non login shells**
   - When started, executes **~/.bashrc**.
 - **Non interactive non login shells**
   - When started, expands and executes the expanded file in $ENV.
-
-In **~/.bash_profile**, I source **~/.bashrc** so that login shells do source it.
-
+  
 I also use other bash specific configuration files in **~/.config/shells/bash** that I source from **~/.bashrc**
 
 #### Sources
