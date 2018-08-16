@@ -252,6 +252,7 @@ pacman -S tldr
 rsync smartmontools tcpdump dnsutils mtr ntp nmap
 dhclient
 dnsmasq
+dig
 
 # Install printers drivers
 pacman -S cups cups-pdf # cups-pdf allows to print to pdf
