@@ -250,3 +250,6 @@ pacman -S tldr
 rsync smartmontools tcpdump dnsutils mtr ntp nmap
 dhclient
 dnsmasq
+
+# Other
+cups # Printers drivers
