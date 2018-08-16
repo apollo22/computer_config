@@ -252,5 +252,18 @@ rsync smartmontools tcpdump dnsutils mtr ntp nmap
 dhclient
 dnsmasq
 
-# Other
-cups # Printers drivers
+# Install printers drivers
+pacman -S cups cups-pdf # cups-pdf allows to print to pdf
+systemctl enable org.cups.cupsd.service
+sytemctl start org.cups.cupsd.service
+## To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
+## Add 'wheel' group to cups admin
+sudo sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
+
+# Zero Configuration Networking
+## Install Avahi
+pacman -S avahi
+
+## Enable printers discovery
+systemctl enable cups-browsed
+systemctl start cups-browsed
