@@ -249,10 +249,10 @@ lsof ?
 # Install tldr
 pacman -S tldr
 
-rsync smartmontools tcpdump dnsutils mtr ntp nmap
+rsync smartmontools tcpdump mtr ntp nmap
 dhclient
 dnsmasq
-dig
+bind-tools # Can be installed as dnsutils, contains dig and ns-lookup
 
 # Install printers drivers
 pacman -S cups cups-pdf # cups-pdf allows to print to pdf
