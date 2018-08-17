@@ -20,7 +20,11 @@
 
 - [ ] Configure systemd
   - [ ] Configure logind (optionnal if using a display manager)
-
+    - [x] Configure user idle time before lock
+  - [ ] Configure sleep.conf
+  
+- [ ] Configure hibernation
+  - [ ] 
 
 ## Other / Unsorted
 - Configure backups
