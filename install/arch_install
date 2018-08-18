@@ -246,6 +246,7 @@ alsamixer
 okular # PDF Reader
 lsof ?
 python
+pidgin
 
 # Install tldr
 pacman -S tldr
