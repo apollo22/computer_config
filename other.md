@@ -27,4 +27,9 @@ EndSection
 - Command
   - setxkbmap -layout us,fr -option grp:lalt_lshift_toggle -option grp_led:scroll # Switch from US to FR keyboard layout and use the keyboard Scroll Lock led to display alternative layout.
 
-### 
+### Wayland
+
+## Brightness Control
+
+Currently use vendor built in
+
