@@ -245,6 +245,7 @@ libreoffice
 alsamixer
 okular # PDF Reader
 lsof ?
+python
 
 # Install tldr
 pacman -S tldr
