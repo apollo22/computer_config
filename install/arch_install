@@ -248,6 +248,7 @@ lsof ?
 python
 pidgin
 gimp
+inkscape
 
 # Install tldr
 pacman -S tldr
