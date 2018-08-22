@@ -247,6 +247,7 @@ okular # PDF Reader
 lsof ?
 python
 pidgin
+gimp
 
 # Install tldr
 pacman -S tldr
