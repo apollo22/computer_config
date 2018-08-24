@@ -8,7 +8,7 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
   - **documents**: my documents
     - **medias**: every medias I own
       - **music**: my music files
-    - **personnal_documents**: my personnal documents
+    - **personal_documents**: my personal documents
     - **private_documents**: my private documents
       - **computer_files**: all my computer related files
         - **git**: unsorted git repositories
