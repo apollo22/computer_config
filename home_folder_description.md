@@ -19,6 +19,7 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
     - **public_documents**: all my personnal public projects
       - **learning_documents**: documents to learn about various subjects
           - **softwares_documentation**: all my software documentation
+      - **public_projects_documents**
 
 ## Hidden files
 
