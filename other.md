@@ -33,3 +33,5 @@ EndSection
 
 Currently use vendor built in
 
+## Git 
+
