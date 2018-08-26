@@ -1,5 +1,8 @@
 # Power managment
 
+## To list events that wake up the computer
+cat /proc/acpi/wakeup
+
 ## Suspend and hibernate
 I currently suspend with systemd.
 
@@ -30,3 +33,6 @@ Section "ServerLayout"
 xset dpms
 
 Query current settings: xset q
+
+## CPU Scaling
+Scaling governors

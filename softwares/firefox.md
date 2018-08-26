@@ -74,3 +74,8 @@ Right - ;
 ### Navigate history
 Previous - Alt + j
 Next     - Alt + ;
+
+### Pass keys - allow application shortcuts
+Pass one key      - .
+Pass all keys     - Ctrl + .
+Stop passing keys - Ctrl + .
