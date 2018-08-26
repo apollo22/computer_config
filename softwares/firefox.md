@@ -41,6 +41,7 @@ Source: https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fu
 - uBlock Origin
 - Ghostery – Privacy Ad Blocker
 - NoMiner - Block Coin Miners
+- Saka Key
 
 ### Firefox Multi-Account Containers
 #### Music Container
@@ -49,3 +50,27 @@ Used to play music
 - Glasses icon
 ##### Websites Lists
 - music.youtube.com
+
+
+## Shortcuts (modified)
+### Move in page
+Up    - l
+Down  - k
+Left  - Shift + j
+Right - Shift + ;
+
+### Fast move
+Up    - Shift + l
+Down  - Shift + k
+
+### Move tab in tab bar
+Left  - Ctrl + j
+Right - Ctrl + ; 
+
+### Change tab
+Left  - j
+Right - ; 
+
+### Navigate history
+Previous - Alt + j
+Next     - Alt + ;

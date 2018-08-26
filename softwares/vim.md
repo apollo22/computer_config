@@ -7,3 +7,5 @@
 ## Other
 
 https://tlvince.com/vim-respect-xdg
+
+Remap hjkl to jkl;
