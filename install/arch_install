@@ -249,6 +249,7 @@ python
 pidgin
 gimp
 inkscape
+openvpn
 
 # Install tldr
 pacman -S tldr

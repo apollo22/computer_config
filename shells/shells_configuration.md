@@ -32,8 +32,9 @@ I also use other bash specific configuration files in **~/.config/shells/bash** 
 Aliases are defined in many files in the **~/.config/shells/aliases** folder :
   - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the _docs aliases.
   - **<shell_name>** for aliases used by a specific shell, loaded by related <shell_name>rc.
-  - **public_docs** for aliases used to navigate to directories and edit files I share with everyone on Internet.
-  - **private_docs** for aliases used to navigate to directories and edit files that are privates.
+  - **public_docs** for files I share with everyone on Internet.
+  - **private_docs** for files that are privates.
+  - **professional_docs** for professional files (related to specific organisations)
   - **temp_docs** for aliases used to navigate to directories and edit files that I am currently working on and that I have not sorted yet.
   - **<project_name>_docs** for aliases used to navigate to directories and edit files that are bound to projects.
   
