@@ -250,6 +250,7 @@ pidgin
 gimp
 inkscape
 openvpn
+vlc
 
 # Install tldr
 pacman -S tldr
