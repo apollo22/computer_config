@@ -5,3 +5,8 @@ Install "Provider for Google Calendar"
 
 ## Dark Theme
 Monterail Full Dark
+
+## Usage
+I want thunderbird to be in a dedicated workspace.
+Open links in a browser in the same workspace as thunderbird, next to thunderbird window
+  When focus on thunderbird, set current focused firefox to the one next to thunderbird
