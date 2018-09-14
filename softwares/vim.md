@@ -9,3 +9,7 @@
 https://tlvince.com/vim-respect-xdg
 
 Remap hjkl to jkl;
+
+
+## Related scripts
+I have a script that check if I can write to the file, if not, it executes with sudo.
