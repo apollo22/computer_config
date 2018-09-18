@@ -79,3 +79,6 @@ Next     - Alt + ;
 Pass one key      - .
 Pass all keys     - Ctrl + .
 Stop passing keys - Ctrl + .
+
+## Other
+Youtube new layout: go to youtube.com/new
