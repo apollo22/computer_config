@@ -8,3 +8,6 @@ For startup config, I use a display manager, so my configuration is currently in
 
 For live configuration, I can either use a GUI, or directly use xrander with some functions. I choose to use both.
 
+## Export with VNC
+
+I use x11vnc
