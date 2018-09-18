@@ -251,6 +251,15 @@ gimp
 inkscape
 openvpn
 vlc
+# Remote desktop
+x11vnc # VNC Server for current X monitors
+remmina # Remote Desktop viewer (VNC, 
+freerdp # RDP Viewer, allowd remmina to use RDP
+
+# Install Cron
+pacman -S cronie
+systemctl enable cronie
+systemctl start cronie
 
 # Install tldr
 pacman -S tldr
