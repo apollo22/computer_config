@@ -9,10 +9,10 @@ I use **global aliases** and **suffix aliases** in shells that support it.
 [TODO] Document and implement
 
 Aliases are defined in many files in the **~/.config/shells/aliases** folder :
-  - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the _docs aliases. **-- Should no longer exist.**
+  - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the _docs aliases. **-- Should no longer exist. --**
   - **<shell_name>** for aliases used by a specific shell, loaded by related <shell_name>rc.
 shellsrc
-  - **root_folders_variables** should be renamed **shells**, set root folders variables and source public, private, personal and professional aliases filese
+  - **root_folders_variables** set root folders variables and source public, private, personal and professional aliases filese **-- should be renamed shells --**
 
 The following **<name>_access aliases** files set related folders variables, source related **<name>_quick_access** file and set aliases to quickly access related folders and files. At their end, they unset all set folders variables.
 The following **<name>_quick_functions** files set short aliases for functions, and source the files in the related **<name>_functions** folder.
@@ -31,6 +31,7 @@ The **professional_access_aliases** source the **<organisation_name>_access_alia
     - **access_aliases**
     - **quick_functions**
     - **functions/**
+  - CONFIG_FILES
 
   - PROFESIONAL_FOLDER/
   - **access_aliases**
