@@ -11,7 +11,6 @@ I use **global aliases** and **suffix aliases** in shells that support it.
 Aliases are defined in many files in the **~/.config/shells/aliases** folder :
   - **shells** for aliases used by all shells, loaded by ~/.config/shells/shellsrc and responsible for loading all the _docs aliases. **-- Should no longer exist. --**
   - **<shell_name>** for aliases used by a specific shell, loaded by related <shell_name>rc.
-shellsrc
   - **root_folders_variables** set root folders variables and source public, private, personal and professional aliases filese **-- Should be renamed shells --**
 
 The following **<name>_access aliases** files set related folders variables, source related **<name>_quick_access** file and set aliases to quickly access related folders and files. At their end, they unset all set folders variables.
