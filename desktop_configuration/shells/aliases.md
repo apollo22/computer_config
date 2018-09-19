@@ -33,11 +33,11 @@ The **access_aliases** in the **PROFESSIONAL_FOLDER** source the **<organisation
   - CONFIG_FILES
 
   - PROFESSIONAL_FOLDER/
-  - **access_aliases**
-  - **<ORGANISATION_NAME>_FOLDER**/
     - **access_aliases**
-    - **functions/**
-      - **quick_functions**
+    - **<ORGANISATION_NAME>_FOLDER**/
+      - **access_aliases**
+      - **functions/**
+        - **quick_functions**
       
 
   functions and other aliases
