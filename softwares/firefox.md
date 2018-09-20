@@ -51,6 +51,13 @@ Used to play music
 ##### Websites Lists
 - music.youtube.com
 
+### Wikiwand
+Wikiwand is a frontend for Wikipedia.
+
+I use English, French and Spanish as prefered languages
+
+### SakaKey
+SakaKey allows me to navigate Firefox without a mouse. Full documentation should be in sakakey.md file (eventually).
 
 ## Shortcuts (modified)
 ### Move in page
