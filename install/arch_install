@@ -251,6 +251,8 @@ gimp
 inkscape
 openvpn
 vlc
+acpi
+
 # Remote desktop
 x11vnc # VNC Server for current X monitors
 remmina # Remote Desktop viewer (VNC, 
