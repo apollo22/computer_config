@@ -4,13 +4,11 @@
 cat /proc/acpi/wakeup
 
 ## Suspend and hibernate
-I currently suspend with systemd.
-
-
+I currently suspend and hibernate with systemd. To do so, I changed /etc/systemd/sleep.conf
 
 ## Lid is closed
-- lock and turn screen off
-- lock then suspend to RAM
+- lock then turn screen off then suspend to RAM then suspend to DISK
+- lock then suspend to RAM then suspend to DISK
 
 ## Monitors power managment
 
