@@ -11,6 +11,10 @@ http://www.wordreference.com/tools/Firefox-search-shortcut.aspx
 
 URL: about:config, set browser.fullscreen.autohide to false
 
+## Show warning after Ctrl+q
+
+URL: about:config, set browser.showQuitWarning to true
+
 ## Bookmarks toolbar in fullscreen
 
 - Open your Firefox profile folder, which is **~/.mozilla/firefox/<hash>.<profile_name>** on Linux. If you can’t find it, you can open **about:support** as an URL in your Firefox. and click the “Open Directory” button in the “Profile Directory” field.
@@ -29,6 +33,10 @@ URL: about:config, set browser.fullscreen.autohide to false
 
 Source: https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fullscreen.html
 
+## Settings
+
+I set my firefox background color to a dark grey
+
 ## Plugins
 
 ### Installed plugins
@@ -37,7 +45,7 @@ Source: https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fu
 - OneTab
 - Reddit Enhancement Suite
 - Wikiwand: Wikipedia Modernized
-- YouTube High Definition
+- Iridium for Youtube
 - uBlock Origin
 - Ghostery – Privacy Ad Blocker
 - NoMiner - Block Coin Miners
