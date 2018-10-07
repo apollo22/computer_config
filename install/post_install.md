@@ -8,15 +8,17 @@
   - [ ] Configure video outputs
 - [ ] Configure windows manager
 - [ ] Configure lockscreen
-- [ ] Configure fonts
+- [x] Configure fonts
 - [ ] Configure shortcuts
 - [ ] Configure notifications
 - [ ] Configure status bar
 - [ ] Configure shells
   - [x] Configure prompts
+    - [X] Zsh
+    - [ ] Bash
   - [ ] Configure aliases
-  - [ ] Zsh
-  - [ ] Bash
+    - [ ] Zsh
+    - [ ] Bash
 
 - [ ] Configure systemd
   - [ ] Configure logind (optionnal if using a display manager)
@@ -24,7 +26,9 @@
   - [ ] Configure sleep.conf
   
 - [ ] Configure hibernation
-  - [ ] 
+  - [ ] Configure suspend
+  - [ ] Configure hibernation
+  - [ ] Configure ACPI Events
 
 ## Other / Unsorted
 - Configure backups
