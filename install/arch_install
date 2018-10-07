@@ -124,6 +124,9 @@ ls /sys/firmware/efi/efivars
 
 # Set root password
   passwd
+
+# Set root shell to zsh
+chsh /bin/zsh
   
 # Add user with home folder and zsh shell.
   useradd -m -g users -G wheel -s /bin/zsh MYUSERNAME
@@ -216,10 +219,81 @@ exit
   ### automatically switch to newly-connected devices
   load-module module-switch-on-connect
 
+# Install web browser
+pacman -S firefox
 
+# Install documents editors
+pacman -S libreoffice
+pacman -S gimp # Raster Image Editor
+pacman -S inkscape # Vector Image Editor
+pacman -S okular # PDF Reader
+pacman -S ark # Archive Manager
+pacman -S ranger # Terminal file explorer
+
+# Other packages
+xterm
+thunderbird
+openssh
+keepassxc
+alsamixer ?
+lsof ?
+python
+pidgin
+openvpn
+vlc
+acpi
+
+# Remote desktop
+pacman -S x11vnc # VNC Server for current X monitors
+pacman -S remmina # Remote Desktop viewer (VNC, 
+pacman -S freerdp # RDP Viewer, allowd remmina to use RDP
+
+# Install Cron
+pacman -S fcron
+systemctl enable fcron
+systemctl start fcron
+
+# Install tldr
+pacman -S tldr
+
+# Install network tools
+pacmac -S dhclient tcpdump mtr 
+
+# Install rsync
+pacman -S rsync
+
+rsync smartmontools ntp nmap
+dnsmasq
+bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
+vnstat # Network traffic monitoring
+
+# Install youtube-dl
+pacman -S youtube-dl
+
+# Install printers drivers
+pacman -S cups cups-pdf # cups-pdf allows to print to pdf
+systemctl enable org.cups.cupsd.service
+sytemctl start org.cups.cupsd.service
+## To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
+## Add 'wheel' group to cups admin
+sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
+
+# Zero Configuration Networking
+## Install Avahi
+pacman -S avahi
+
+## Enable printers discovery
+systemctl enable cups-browsed
+systemctl start cups-browsed
+
+## Install pdf editor
+pacman -S pdfsam
+pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
+
+# Install netcat
+pacman -S gnu-netcat
 
 # Install AUR Helper: aurman
-
 ## Install PGP key for aurman
 wget https://github.com/polygamma.gpg
 gpg --import polygamma.gpg
@@ -232,57 +306,10 @@ makepkg -si --needed --noconfirm # -s: install missing dependencies, -i: install
 cd ..
 rm -rf aurman-git/
 
+# Install AUR packages
 
-# Other packages
-xterm
-firefox
-thunderbird
-openssh
-keepassxc
-ranger
-ark
-libreoffice
-alsamixer
-okular # PDF Reader
-lsof ?
-python
-pidgin
-gimp
-inkscape
-openvpn
-vlc
-acpi
+## Install gitkraken
+aurman -S gitkraken
 
-# Remote desktop
-x11vnc # VNC Server for current X monitors
-remmina # Remote Desktop viewer (VNC, 
-freerdp # RDP Viewer, allowd remmina to use RDP
-
-# Install Cron
-pacman -S cronie
-systemctl enable cronie
-systemctl start cronie
-
-# Install tldr
-pacman -S tldr
-
-rsync smartmontools tcpdump mtr ntp nmap
-dhclient
-dnsmasq
-bind-tools # Can be installed as dnsutils, contains dig and ns-lookup
-
-# Install printers drivers
-pacman -S cups cups-pdf # cups-pdf allows to print to pdf
-systemctl enable org.cups.cupsd.service
-sytemctl start org.cups.cupsd.service
-## To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
-## Add 'wheel' group to cups admin
-sudo sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
-
-# Zero Configuration Networking
-## Install Avahi
-pacman -S avahi
-
-## Enable printers discovery
-systemctl enable cups-browsed
-systemctl start cups-browsed
+## Install kiwix
+aurman -S kiwix-bin
