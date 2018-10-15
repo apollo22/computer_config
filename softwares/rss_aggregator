@@ -1,0 +1,16 @@
+# RSS Agregator
+
+I want to open my links in the external browser
+I would like the Window Manager to open my RSS Agregator next to my Web browser so that any link opened is opened in the browser window next to my RSS Agregator window.
+I don't want to see articles I already read, but I want to see all the sources
+
+## General Shortcut
+Next      Article : k ; Down Arrow 
+Previous  Article : l ; Up Arrow
+Next      Folder  : ; ; Right Arrow
+Previous  Folder  : j ; Left Arrow 
+Open link in browser : Enter
+
+## Akgregator
+Need to remap shortcuts
+
