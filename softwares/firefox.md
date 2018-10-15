@@ -11,10 +11,6 @@ http://www.wordreference.com/tools/Firefox-search-shortcut.aspx
 
 URL: about:config, set browser.fullscreen.autohide to false
 
-## Show warning after Ctrl+q
-
-URL: about:config, set browser.showQuitWarning to true
-
 ## Bookmarks toolbar in fullscreen
 
 - Open your Firefox profile folder, which is **~/.mozilla/firefox/<hash>.<profile_name>** on Linux. If you can’t find it, you can open **about:support** as an URL in your Firefox. and click the “Open Directory” button in the “Profile Directory” field.
