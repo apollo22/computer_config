@@ -297,6 +297,9 @@ pacman -S gnu-netcat
 pacman -S flameshot
 pacman -S deepin-screenshot
 
+# Install GnuPG
+pacman -S gnupg
+
 # Install AUR Helper: aurman
 ## Install PGP key for aurman
 wget https://github.com/polygamma.gpg
