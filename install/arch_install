@@ -293,12 +293,18 @@ pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
 # Install netcat
 pacman -S gnu-netcat
 
-# Install screenshot softwares
-pacman -S flameshot
-pacman -S deepin-screenshot
 
-# Install GnuPG
-pacman -S gnupg
+# Other installs
+  # Install GnuPG
+  pacman -S gnupg
+  # Install screenshot softwares
+  pacman -S flameshot
+  pacman -S deepin-screenshot
+  # Install tree
+  pacman -S tree
+
+
+
 
 # Install AUR Helper: aurman
 ## Install PGP key for aurman
