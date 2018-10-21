@@ -1,0 +1,44 @@
+# Prompt
+
+## Left Prompt
+
+### List of information
+
+  [Always on]
+  Current user name
+    Red if root
+    Orange if su ?
+  Current machine
+  Current folder
+    Red: can't write on current folder
+
+  [Context dependant]
+  Error code
+    If error on previous command
+  Connection status
+    Internet access
+    Wireless / USB / Wired access
+    IPv6 (displayed) / IPv4 (hidden)
+
+
+
+## Right Prompt
+
+## Status line
+  This is the line a the bottom of the terminal
+  Hide for small windows
+
+  [Always on]
+  Current mode
+    vi / emacs
+  Time and date
+
+  [Context dependant]
+  Battery status
+    If laptop
+    If remote laptop (no access to display server)
+  Current vi mode (normal / insert / visual)
+    If in vi mode
+  CPU / Disk usage
+  Version Control (git)
+    If in a repo
