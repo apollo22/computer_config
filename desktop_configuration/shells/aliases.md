@@ -42,12 +42,11 @@ The **access_aliases** in the **PROFESSIONAL_FOLDER** source the **<organisation
 
   functions and other aliases
     
-shalias = pubalias
-<name>falias
-<name>dalias
-
-
 ## Unsorted notes
+
+pub_conf_alias
+priv_conf_alias
+for now in conf_alias
 
 <folder_name>: access folder (with underscores removed)
 n<subject>: edit note about subject
