@@ -257,7 +257,7 @@ systemctl start fcron
 pacman -S tldr
 
 # Install network tools
-pacmac -S dhclient tcpdump mtr 
+pacmac -S dhclient tcpdump mtr traceroute
 
 # Install rsync
 pacman -S rsync
