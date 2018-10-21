@@ -29,6 +29,9 @@ URL: about:config, set browser.fullscreen.autohide to false
 
 Source: https://shinglyu.github.io/web/2016/06/20/firefox_bookmark_toolbar_in_fullscreen.html
 
+## Disable Ctrl+Q in firefox
+https://github.com/sasawat/firefox-ctrl-q-workaround/blob/master/noctrlq.sh
+
 ## Settings
 
 I set my firefox background color to a dark grey
