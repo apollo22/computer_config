@@ -10,6 +10,9 @@ I currently suspend and hibernate with systemd. To do so, I changed /etc/systemd
 - lock then turn screen off then suspend to RAM then suspend to DISK
 - lock then suspend to RAM then suspend to DISK
 
+## Inactivity
+I want my computer to lock my session and go to sleep mode after X minute of inactivity. I currently do it through xautolock as I use Xorg.
+
 ## Monitors power managment
 
 Use DPMS
