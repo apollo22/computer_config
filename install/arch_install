@@ -303,6 +303,9 @@ pacman -S gnu-netcat
   # Install tree
   pacman -S tree
 
+# Interfaces with other devices
+  # Android
+  pacman -S android-tools
 
 
 
