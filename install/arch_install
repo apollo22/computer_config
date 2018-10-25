@@ -243,6 +243,10 @@ openvpn
 vlc
 acpi
 
+# Xorg additional tools
+  # xautolock: fire up programs in case of user inactivity under X
+  pacman -S xautolock
+
 # Remote desktop
 pacman -S x11vnc # VNC Server for current X monitors
 pacman -S remmina # Remote Desktop viewer (VNC, 
