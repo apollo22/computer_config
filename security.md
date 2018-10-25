@@ -1,5 +1,11 @@
 # Security
 
+## Network Security
+  ### DNS
+  - DNSSEC
+  - Encrypted DNS
+    - dnscrypt
+
 ## Cold boot attack
 - RAM Encryption
 
