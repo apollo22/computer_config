@@ -297,6 +297,9 @@ pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
 # Install netcat
 pacman -S gnu-netcat
 
+# Install clusterssh
+pacman -S clusterssh
+
 
 # Other installs
   # Install GnuPG
@@ -310,6 +313,9 @@ pacman -S gnu-netcat
 # Interfaces with other devices
   # Android
   pacman -S android-tools
+
+# Install progress (coreutils progress viewer: cp, dd, mv, ...)
+  pacman -S progress
 
 
 
@@ -327,9 +333,8 @@ cd ..
 rm -rf aurman-git/
 
 # Install AUR packages
+  ## Install gitkraken
+  aurman -S gitkraken
+  ## Install up (shell pipe preview)
+  aurman -S up
 
-## Install gitkraken
-aurman -S gitkraken
-
-## Install kiwix
-aurman -S kiwix-bin
