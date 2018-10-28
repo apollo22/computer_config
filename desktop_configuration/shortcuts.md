@@ -9,7 +9,7 @@ Shortcuts that should be available from anywhere starts with the Windows Key
 
 
 ### Shell
-See readline
+See readline (and its configuration file: inputrc)
 
 ## Display Server
 ### Windows Manager
