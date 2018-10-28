@@ -300,6 +300,9 @@ pacman -S gnu-netcat
 # Install clusterssh
 pacman -S clusterssh
 
+# Install newsboat (news agregator rss/atom)
+  pacman -S newsboat
+
 
 # Other installs
   # Install GnuPG
