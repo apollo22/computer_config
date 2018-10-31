@@ -303,6 +303,8 @@ pacman -S clusterssh
 # Install newsboat (news agregator rss/atom)
   pacman -S newsboat
 
+# Install units (units converter)
+  pacman -S units
 
 # Other installs
   # Install GnuPG
