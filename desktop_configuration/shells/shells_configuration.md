@@ -79,5 +79,21 @@ environment variable editing
 programmable file renaming
 history substring search (same as Ctrl + R ?)
 
+## Open GUI in the background (i.e. detached from the terminal
+
+Define the 'background' alias to
+```
+alias background="setsid &> /dev/null"
+```
+and define an alias for the given applications
+```
+alias vlc="background vlc"
+alias firefox="background firefox"
+```
+
 ## Shell syntax comparison
 http://hyperpolyglot.org/unix-shells
+
+## SECURITY
+enable bracketed paste mode
+  https://cirw.in/blog/bracketed-paste
