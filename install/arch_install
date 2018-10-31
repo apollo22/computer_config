@@ -230,6 +230,9 @@ pacman -S okular # PDF Reader
 pacman -S ark # Archive Manager
 pacman -S ranger # Terminal file explorer
 
+pacman -S pandoc # Document converter
+pacman -S texlive-most # Tex tools (~2GiB)
+
 # Other packages
 xterm
 thunderbird
