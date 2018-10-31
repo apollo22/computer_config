@@ -1,6 +1,9 @@
 # Websites tricks
 
 ## Youtube
+  # Youtube new layout (allow dark mode)
+  go to youtube.com/new
+
   # Repeat a video
   change youtube.com
        to youtuberepeat.com
