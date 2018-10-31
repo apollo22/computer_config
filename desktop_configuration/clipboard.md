@@ -39,7 +39,7 @@ xsel --primary | xsel --clipboard
 ```
 paste from PRIMARY
 ```
-bash -c "xdotool type $(xsel)"
-bash -c "xdotool click 2"
-bash -c "xsel | xvkbd -xsendevent -file -"
+bash -c "xdotool type $(xsel)" # Is caught by the WM shortcuts
+bash -c "xsel | xvkbd -xsendevent -file -" # Requires a package which is not an official Arch package
+bash -c "xdotool click 2" # Requires the cursor in the text field
 ```
