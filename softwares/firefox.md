@@ -63,6 +63,10 @@ Wikiwand is a frontend for Wikipedia.
 
 I use English, French and Spanish as prefered languages
 
+### Dynamic Zoom
+
+Useful when often resizing a window
+
 ### SakaKey
 SakaKey allows me to navigate Firefox without a mouse. Full documentation should be in sakakey.md file (eventually).
 
@@ -94,5 +98,14 @@ Pass one key      - .
 Pass all keys     - Ctrl + .
 Stop passing keys - Ctrl + .
 
+## Change WM_CLASS
+  * Create a new profile (this allows you to have multiple running instances of firefox)
+```
+firefox -P <anything> # Launches the profile manager
+```
+  * Launch firefox with a new WM_CLASS
+```
+firefox -P <profile-name> --class="<class-name>"
+```
+
 ## Other
-Youtube new layout: go to youtube.com/new
