@@ -79,17 +79,20 @@ environment variable editing
 programmable file renaming
 history substring search (same as Ctrl + R ?)
 
-## Open GUI in the background (i.e. detached from the terminal
+## Open GUI applications in the background (i.e. detached from the terminal
 
 Define the 'background' alias to
 ```
 alias background="setsid &> /dev/null"
 ```
-and define an alias for the given applications
+Then define an alias for the given applications
 ```
 alias vlc="background vlc"
 alias firefox="background firefox"
 ```
+
+## Open files with the correct application
+I currently define suffix aliases with ZSH. I might change to use `xdg-open`
 
 ## Shell syntax comparison
 http://hyperpolyglot.org/unix-shells
