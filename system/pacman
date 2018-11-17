@@ -1,0 +1,16 @@
+# Pacman
+
+When I am not on a metered connection, I want to
+  - fetch database update every hour
+  - download (not install) update evert day
+
+
+When I am low on disk space, I want to remove packages that are not installed from the cache
+`pacman -Sc`
+
+# Configuration
+Uncomment the following in pacman.conf
+```
+TotalDownload   # To show total download information.
+VerbosePkgLists # To show detailled information about packages
+```
