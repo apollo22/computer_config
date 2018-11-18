@@ -178,6 +178,9 @@ pacman -Syu
 # Install useful packages
 pacman -S wget curl
 
+# Install pacman tools
+pacman -S pacman-contrib # pactree, paccache
+
 #######
 # AUR #
 #######
