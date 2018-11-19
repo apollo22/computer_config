@@ -14,6 +14,9 @@ To make Vundel compliant with XDG_BASE_DIRECTORY
   indent columns
   improved status line
 
+## Configuration
+I don't want comments to be inserted automatically by default
+
 
 ## Other
 
