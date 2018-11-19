@@ -1,71 +1,62 @@
 # Set keyboard layout
 # Default is fine for me
 
-# Verify boot mode
-ls /sys/firmware/efi/efivars
-
-# Connect to internet 
-
-  ## If not working, check if network controller module is loaded
-  lspci -k | grep -A 4 Network controller
-  dmesg | grep <kernel modules>
-  
-  ## Connect to WIFI (easy config)
-  wifi-menu
-  
-  ## Connect to WIFI (harder)
-  iw dev # Get interface name
-  ip link set <interface name> up # Activate interface
-  iw dev interface scan | less # Scan for networks
-  ### Configure wpa_supplicant (for WPA protected WIFI)
-  wpa_passphrase <ssid> <passphrase> > /etc/wpa_supplicant/wpa_supplicant.conf
-  wpa_supplicant -h | grep -A 5 drivers: # Get drivers name
-  wpa_supplicant -D<driver name> -i<interface name> -c/etc/wpa_supplicant/wpa_supplicant.conf
-
-  ## Get IP address (DHCP)
-  systemctl start dhcpcd
-  ## Get IP address (Static)
+# Verify boot mode (folder only exists if booted from UEFI)
+  ls /sys/firmware/efi/efivars
 
 # Set clock
-  timedatectl set-ntp true
-  # timedatectl list-timezones # List timezones
-  timedatectl set-timezone Europe/Paris
+  # Enable NTP
+    timedatectl set-ntp true
+  # Set timezone
+    # timedatectl list-timezones # List timezones
+    timedatectl set-timezone Europe/Paris
 
-# Partition hard drives
-  # Partitions on drive
-  ## EFI System Partition: 550 MiB (Not on LVM or Software RAID) (source: http://www.rodsbooks.com/efi-bootloaders/principles.html)
-  ## /boot Partition: 200 MiB (Not on LVM or Software RAID) (source: https://wiki.archlinux.org/index.php/partitioning#.2Fboot)
-  ## LVM Partition: The rest of the disk
+# Configure drives
+  # https://www.tnpi.net/wiki/Proper_sizing_of_disk_partitions
+  # https://docs.fedoraproject.org/en-US/Fedora/13/html/Installation_Guide/s2-diskpartrecommend-x86.html
+  # GUID Partition types: https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/
+  lsblk # List drives
+
+  # Partitions drives
+    # EFI System Partition: 550 MiB (Not on LVM or Software RAID), Partition type: EFI System (1)
+      #(source: http://www.rodsbooks.com/efi-bootloaders/principles.html)
+    # /boot Partition: 200 MiB (Not on LVM or Software RAID, not on btrfs partition, cannot be luks2), Partition type: Linux filesystem ()
+      # (source: https://wiki.archlinux.org/index.php/partitioning#.2Fboot)
+    # Arch backup partitions: not used yet
+    # LVM Partition: Rest of the disk, Partition type: Linux LVM (31)
+
+  # Configure partitions encryption
+    cryptsetup luksFormat --type luks2 <device-path> # For /boot partition, remove "--type luks2"
+    cryptsetup open <device-name> <decrypted-device-name> # <decrypted-device-name> can be found at /dev/mapper/<decrypted-device-name>
+
+  # Configure LVM Partitions
     # Partitions on LVM
-      # Swap partition: (1,5 * RAM)
-      # / (root) partition: The rest
-      # /home partition: Not used yet
+      # / (root) partition: The rest , Partition type: Linux root (x86-64) (24)
+      # /home partition: Not used yet, Partition type: Linux home (28)
       # /var: Not used yet
-      # Sources:
-        # https://www.tnpi.net/wiki/Proper_sizing_of_disk_partitions
+      # /tmp: Not used yet
+      # swap partition: (1,5 * RAM), Partition type: Linux Swap (19)
+        # (source: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-diskpartrecommend-ppc)
     # Create Volume Group: One command
-    lvmdiskscan # List devices capable of being used as Physical Volumes
-    vgcreate <volume_group> <device_name> <device_name> # Create a volume group and associates given devices
-    # Create Volume Group: Multiple Commands
-    pvcreate <device_name> # Create Physical Volume
-    vgcreate <volume_group> <physical_volume> # Create Volume Group
-    vgextend <volume_group> <physical_volume> # Add Physical Volume to Volume Group
+      lvmdiskscan # List devices capable of being used as Physical Volumes
+      pvcreate <device_name> # Create Physical Volume
+      vgcreate <volume_group> <physical_volume> # Create Volume Group
+      vgextend <volume_group> <physical_volume> # Add Physical Volume to Volume Group
     # Create Logical Volume
-    lvcreate -L <size> <volume_group> -n <logical_volume_name>
-    lvcreate -l +100%FREE <volume_group> -n <logical_volume_name> # To fill the rest of the Volume Group with one Logical Volume
-
+      lvcreate -L <size> <volume_group> -n <logical_volume_name>
+      lvcreate -l +100%FREE <volume_group> -n <logical_volume_name> # To fill the rest of the Volume Group with one Logical Volume
 
 # Setup swap
+  # Swap partition
   mkswap <device>
   swapon <device>
+  # TODO: Add zswap or zram
   # fstab will be updated later with 'genfstab'
 
 # Format partitions
   # EFI System Partition: FAT32
-  mkfs.fat -F32 /dev/sdX1
-  # /boot partition: ext4
-  mkfs.ext <device>
-  # / (root) partition: ext4
+  mkfs.fat -F32 <device>
+  # Other partitions: ext4
   mkfs.ext <device>
 
 # Mount the filesystems
@@ -77,11 +68,34 @@ ls /sys/firmware/efi/efivars
   # Mount EFI System Partition to /mnt/efi (not EFISTUB)
   mkdir /mnt/efi
   mount <device> /mnt/efi
+
+# Connect to internet 
+  # If not working, check if network controller module is loaded
+    lspci -k | grep -A 4 Network controller
+    dmesg | grep <kernel modules>
+  # Connect to WIFI
+    # Connect to WIFI (easy config)
+      wifi-menu
+    # Connect to WIFI (harder)
+      iw dev # Get interface name
+      ip link set <interface name> up # Activate interface
+      iw dev interface scan | less # Scan for networks
+      # Configure wpa_supplicant (for WPA protected WIFI)
+      wpa_passphrase <ssid> <passphrase> > /etc/wpa_supplicant/wpa_supplicant.conf
+      wpa_supplicant -h | grep -A 5 drivers: # Get drivers name
+      wpa_supplicant -D<driver name> -i<interface name> -c/etc/wpa_supplicant/wpa_supplicant.conf
+  # Get IP address
+    systemctl start dhcpcd # DHCP
+    ip addr add X.X.X.X/X dev <device-name> # Static
+  # Connect to captive portal
+    elinks test.com # Use arrow keys and ENTER to navigate
+
+
   
 # Update mirror list
   # Install necessary package for 'rankmirrors'
-  pacman -Su # Update local cache
-  pacman -Sy pacman-contrib # Contains /usr/bin/rankmirrors
+  pacman -Syu # Update
+  pacman -S pacman-contrib # Contains /usr/bin/rankmirrors
   # Backup previous mirrorlist
   cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
   # Download latest https mirrorlist
@@ -95,9 +109,10 @@ ls /sys/firmware/efi/efivars
   pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog wget
   # 'dialog' is for 'wifi-menu'
   # gvim install vim and adds support for GTK/X, specifically the ```+clipboard``` feature (source: https://wiki.archlinux.org/index.php/Vim#Installation)
+  # intel-ucode will be installed automcatically when regenerating the GRUB config with 'grub-mkconfig'
 
 # Generate fstab file based on UUID
-  genfstab -U /mnt >> /mnt/etc/fstab
+  genfstab -U /mnt >> /mnt/etc/fstab # -U is for UUID based
 
 # Chroot in system
   arch-chroot /mnt
@@ -111,7 +126,7 @@ ls /sys/firmware/efi/efivars
   # Generate locales
   locale-gen
   # Set the LANG variable in /etc/locale.conf
-  echo LANG=en_US.UTF-8 > /etc/local.conf
+  echo LANG=en_US.UTF-8 > /etc/locale.conf
   
 # Network Configuration
   # Create hostname file
@@ -126,27 +141,51 @@ ls /sys/firmware/efi/efivars
   passwd
 
 # Set root shell to zsh
-chsh /bin/zsh
+chsh root -s/bin/zsh # -s specify the shell
   
 # Add user with home folder and zsh shell.
-  useradd -m -g users -G wheel -s /bin/zsh MYUSERNAME
-  passwd MYUSERNAME
+  useradd -m -g users -G wheel -s /bin/zsh <username>
+  passwd <username>
   
 # Allow 'wheel' group to execute any command with sudo
   # Uncomment # %wheel ALL=(ALL) ALL with 'visudo', 'sudo' package is in 'base-devel'
   visudo
+
+# Configure vconsole font
+  echo KEYMAP=us > /etc/vconsole.conf
+  echo FONT=eurlatgr >> /etc/vconsole.conf
   
 # Initramfs
   # Add LVM2 hook
-  Add lvm2 in /etc/mkinitcpio.conf, in HOOKS=(base ...)
+  Add the following in HOOKS=(base ...) located in /etc/mkinitcpio.conf
+    - systemd
+    - keyboard
+    - sd-vconsole
+    - sd-encrypt
+    - sd-lvm2
+
   # Regenerate initrd image
   mkinitcpio -p linux
   
-# Install GRUB
+# Install GRUB as a bootloader
   pacman -S grub
-  grub-mkconfig -o /boot/grub/grub.cfg
-  grub-install --target=x86_64-efi --efi-directory=efi --bootloader-id=GRUB
-  # It is normal if you get 'WARNING: Failed to connect to lvmetad. (source: https://wiki.archlinux.org/index.php/GRUB#Warning_when_installing_in_chroot)
+  pacman -S efibootmgr
+  # Configure grub
+    # The following files are ine /etc/default/grub
+    # Set kernel parameters
+    The following keywords have to be added to the GRUB_CMDLINE_LINUX_DEFAULT line (normal mode) or the GRUB_CMDLINE_LINUX line (recovery mode). Keywords in recovery mode are also used in normal mode.
+      - quiet # Remove kernel messages
+      - lvm2
+      - luks.name=<device-UUID>=<decrypted-device-name>
+      - root=<device-name>
+      - resume=<device-name>
+    # Configure GRUB to recognise a LUKS encrypted /boot
+    GRUB_ENABLE_CRYPTODISK=y
+  # Generate grub.cfg
+    grub-mkconfig -o /boot/grub/grub.cfg
+    # It is normal if you get 'WARNING: Failed to connect to lvmetad. (source: https://wiki.archlinux.org/index.php/GRUB#Warning_when_installing_in_chroot)
+  # Install GRUB in ESP and in firmware boot manager
+    grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
   
 # Exit new system with 'exit' or Ctrl+D
   exit
@@ -158,13 +197,13 @@ chsh /bin/zsh
 # Reboot
   reboot
   
-# Access EFI Shell
+# Access EFI Shell (if bootloader not in the firmware boot manager)
   map # List devices
   <device>: # Access device
   bcfg boot dump # List boot devices
   bcfg boot add <number> FS0:\<path_to_file\grubx64.efi "GRUB"
 
-### Post Install
+# Post Install
 
 # Connect to WIFI with NetworkManager
 pacman -S networkmanager # nmcli in 'networkmanager' packet
@@ -178,8 +217,33 @@ pacman -Syu
 # Install useful packages
 pacman -S wget curl
 
-# Install pacman tools
-pacman -S pacman-contrib # pactree, paccache
+# Advanced configuration
+
+  # Enable hibernation
+    # Configure kernel parameter
+      resume=<swap-partition> # Swap partition and swap file
+      resume_offset=<swap-file-offset> # Swap file only
+    # Configure initramfs
+      If there is not a 'systemd' hook, add the 'resume' hoot after the 'udev' and 'lvm2' hook
+      # Regenerate initramfs
+
+  # Create keyfile in initramfs so that you don't have to unlock the /boot partitions after it has been unlocked by grub
+    mkdir /root/myramfs
+    mount ramfs /root/myramfs/ -t ramfs
+    cd /root/myramfs
+
+    # dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin
+    # chmod 000 /crypto_keyfile.bin
+    # chmod 600 /boot/initramfs-linux* # Prevents normal users from dumping secrets from initramfs
+    # cryptsetup luksAddKey /dev/sdX# /crypto_keyfile.bin
+
+    Include the key in mkinitcpio's FILES array: /etc/mkinitcpio.conf
+    FILES=(/crypto_keyfile.bin)
+    # Regenerate mkinitcpio
+
+    # umount /root/myramfs
+
+ # Enable network
 
 #######
 # AUR #
@@ -293,7 +357,7 @@ pacman -S freerdp # RDP Viewer, allowd remmina to use RDP
 pacman -S tldr
 
 # Install network tools
-pacmac -S dhclient tcpdump mtr traceroute
+pacmac -S tcpdump mtr traceroute
 
 # Install rsync
 pacman -S rsync
@@ -310,8 +374,8 @@ pacman -S youtube-dl
   pacman -S cups cups-pdf # cups-pdf allows to print to pdf
   systemctl enable org.cups.cupsd.service
   sytemctl start org.cups.cupsd.service
-  ## To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
-  ## Add 'wheel' group to cups admin
+  # To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
+  # Add 'wheel' group to cups admin
   sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
 
   # Zero Configuration Networking
