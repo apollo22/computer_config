@@ -201,7 +201,7 @@ chsh root -s/bin/zsh # -s specify the shell
   map # List devices
   <device>: # Access device
   bcfg boot dump # List boot devices
-  bcfg boot add <number> FS0:\<path_to_file\grubx64.efi "GRUB"
+  bcfg boot add <number> FS0:\<path_to_file\grubx64.efi "GRUB" # Add grub
 
 # Post Install
 
@@ -279,6 +279,13 @@ pacman -S wget curl
       # Configure xinitrc
         # Add exec i3
 
+# Install terminal and terminal utilities
+  pacman -S xterm
+  pacman -S tmux screen # Terminal multiplexe
+
+# Install serial console
+  pacman -S minicom
+
 # Install Cron
   pacman -S fcron
   systemctl enable fcron
@@ -329,7 +336,6 @@ pacman -S firefox
   pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
 
 # Other packages
-xterm
 thunderbird
 openssh
 keepassxc
