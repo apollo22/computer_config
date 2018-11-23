@@ -1,8 +1,7 @@
 # Pacman
 
 When I am not on a metered connection, I want to
-  - fetch database update every hour
-  - download (not install) update evert day
+  - update database and download (not install) updates every hour
 
 
 When I am low on disk space, I want to remove packages that are not installed from the cache
