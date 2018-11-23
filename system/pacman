@@ -1,8 +1,7 @@
 # Pacman
 
 When I am not on a metered connection, I want to
-  - update database and download (not install) updates every hour
-
+  - update database and download (not install) updates every hour (I currently do it with a systemd timer)
 
 When I am low on disk space, I want to remove packages that are not installed from the cache
 `pacman -Sc`
