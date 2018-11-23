@@ -2,21 +2,23 @@
 
 ## SSH follows XDG_BASE_DIRECTORY
 Several files are used by ssh
-  - ~/.ssh/config: You can do it 3 different ways
-    - either add `Include ~/.config/ssh/config` in ~/.ssh/config
-    - or add the following in your bashrc (allows you to remove ~/.ssh/config
+  - ~/.ssh/config: You can do it 2 different ways
+    - Add `Include ~/.config/ssh/config` in ~/.ssh/config
+    - Or add the following in your bashrc (allows you to remove ~/.ssh/config)
 ```
-if [ -s "${XDG_CONFIG_HOME}/ssh/config" ]
-then
-    SSH_CONFIG="-F ${XDG_CONFIG_HOME}/ssh/config"
-fi
-if [ -s "${XDG_CONFIG_HOME}/ssh/id_dsa" ]
-then
-    SSH_ID="-i ${XDG_CONFIG_HOME}/ssh/id_dsa"
+SSH_CONFIG_FILE=${XDG_CONFIG_HOME}/ssh/config
+if [ -s "$SSH_CONFIG_FILE" ]; then
+  alias ssh="ssh -F $SSH_CONFIG_FILE"
 fi
 
-alias ssh="ssh $SSH_CONFIG $SSH_ID "
-alias ssh-copy-id="ssh-copy-id $SSH_ID"
+```
+  - ~/.ssh/id*.pub (the last modified one)
+    - Add the following in your bashrc:
+```
+SSH_ID=${XDG_CONFIG_HOME}/ssh/machine-keys/id-rsa-4096.pub
+if [ -s "$SSH_ID" ]; then
+  alias ssh-copy-id="ssh-copy-id -i $SSH_ID"
+fi
 ```
   - ~/.ssh/known_hosts
     - Add `UserKnownHostsFile <your XDG_CONFIG_HOME>/ssh/known_hosts` to your ssh config file (default ssh config file is ~/.ssh/config)
