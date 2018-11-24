@@ -243,6 +243,11 @@ pacman -S wget curl
 
     # umount /root/myramfs
 
+
+  # Use XDG BASE DIRECTORY specification
+    pacman -S xdg-user-dirs
+    xdg-user-dirs-udpdate
+
  # Enable network
 
 #######
