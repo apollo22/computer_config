@@ -106,8 +106,9 @@
   rankmirrors -n 20 /etc/pacman.d/https_mirrorlist > /etc/pacman.d/mirrorlist
 
 # Install
-  pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog wget
+  pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog wget elinks
   # 'dialog' is for 'wifi-menu'
+  # elinks is in case there is a captive portal on your network
   # gvim install vim and adds support for GTK/X, specifically the ```+clipboard``` feature (source: https://wiki.archlinux.org/index.php/Vim#Installation)
   # intel-ucode will be installed automcatically when regenerating the GRUB config with 'grub-mkconfig'
 
@@ -343,6 +344,7 @@ pacman -S firefox
 # Other packages
 thunderbird
 openssh
+putty (useful to convert ppk keys)
 keepassxc
 alsamixer ?
 lsof ?
@@ -375,6 +377,7 @@ pacman -S rsync
 
 smartmontools ntp nmap
 dnsmasq
+ldns # Contains drill and ldns
 bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
 vnstat # Network traffic monitoring
 
