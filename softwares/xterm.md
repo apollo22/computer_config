@@ -1,6 +1,8 @@
 # Uxterm configuration
+Configuration file: `.config/xorg/xresources`
 
-Enable TrueType font
+# Enable TrueType font
+  renderFont: true
 
 Increase saved lines: `UXTerm*saveLines: 4096`
 
