@@ -287,6 +287,7 @@ pacman -S wget curl
 
 # Install terminal and terminal utilities
   pacman -S xterm
+  pacman -S terminator
   pacman -S tmux screen # Terminal multiplexe
 
 # Install serial console
@@ -368,6 +369,7 @@ pacman -S freerdp # RDP Viewer, allowd remmina to use RDP
 
 # Install tldr
 pacman -S tldr
+aurman -S cht.sh
 
 # Install network tools
 pacmac -S tcpdump mtr traceroute
@@ -441,4 +443,7 @@ pacman -S clusterssh
   aurman -S gitkraken
 # Install up (shell pipe preview)
   aurman -S up
+
+# dateutils
+pacman -S dateutils
 
