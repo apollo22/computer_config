@@ -372,16 +372,18 @@ pacman -S tldr
 aurman -S cht.sh
 
 # Install network tools
-pacmac -S tcpdump mtr traceroute
+pacmac -S tcpdump mtr traceroute curl wget
 
-# Install rsync
-pacman -S rsync
-
-smartmontools ntp nmap
+ntp nmap
 dnsmasq
 ldns # Contains drill and ldns
 bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
 vnstat # Network traffic monitoring
+
+smartmontools 
+
+# Install rsync
+pacman -S rsync
 
 # Install youtube-dl
 pacman -S youtube-dl
