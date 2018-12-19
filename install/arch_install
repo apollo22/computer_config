@@ -449,3 +449,5 @@ pacman -S clusterssh
 # dateutils
 pacman -S dateutils
 
+# Docker
+pacman -S docker
