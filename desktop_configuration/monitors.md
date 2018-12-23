@@ -9,3 +9,12 @@ For live configuration, I can either use a GUI, or directly use xrander with som
 ## Export with VNC
 
 I use x11vnc
+
+## Screen brightness control
+
+I use xbacklight
+
+```
+xbacklight -inc 20
+xbacklight -dec 20
+```
