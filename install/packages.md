@@ -153,6 +153,3 @@ pacman -S dateutils
 
 # Docker
 pacman -S docker
-
-# Power management
-pacman -S tlp
