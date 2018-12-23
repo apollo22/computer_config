@@ -1,0 +1,36 @@
+# Git for dotfiles
+
+I use two repositories: `.dotfiles/public` and `.dotfiles/private`. The first is for public display, the second is for my personal backups.
+
+Firstly, I create the two directories for my repositories:
+```
+mkdir -p ~/.dotfiles/public
+mkdir ~/.dotfiles/private
+```
+
+Then I create the following aliases: 
+```
+alias git_private_dotfiles="git --git-dir ~/.dotfiles/private/.git --work-tree=\$HOME"
+alias git_public_dotfiles="git --git-dir ~/.dotfiles/public/.git --work-tree=\$HOME"
+```
+
+Then I init both repositories:
+```
+git_private_dotfiles init
+git_public_dotfiles init
+```
+
+Then, for my public repository, I ignore everything by default:
+```
+echo "*" > ~/.dotfiles/public/.git/info/exclude
+```
+
+For my public repository, I can finally add the files and folder I wish to publish.
+
+Then, for my private repository, I configure the files I want to ignore in a .gitignore:
+```
+vim ~/.dotfiles/private/.gitignore
+git_private_dotfiles commit -m "Initial commit: gitignore"
+```
+
+
