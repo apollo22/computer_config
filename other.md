@@ -29,9 +29,5 @@ EndSection
 
 ### Wayland
 
-## Brightness Control
-
-Currently use vendor built in
-
 ## Git 
 
