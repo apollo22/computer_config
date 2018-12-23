@@ -14,7 +14,7 @@
   When I go to the second mode, it is only temporary and returns to the first mode after X minutes of non-utilisation
 
 ## Inactivity
-  I want my computer to lock my session and go to sleep mode after X minutes of inactivity. I currently do it through xautolock as I use Xorg.
+  [DOES NOT WORK] I want my computer to lock my session and go to sleep mode after X minutes of inactivity. I currently do it through xautolock as I use Xorg.
 
 ## Monitors power managment
   Use DPMS, currently through Xorg
@@ -44,12 +44,11 @@ Scaling governors
   Wireless networks power management do not depend on battery level or charging state.
 
   # WIFI
-  When powering on, I want WIFI to be activated.
-  When resuming from suspend or hibernate, I want WIFI to be turned on.
+  When powering on or resuming from suspend or hibernate, I want WIFI to be activated.
   When no WIFI are available for X minutes, I want WIFI to be turned off.
 
   # Bluetooth
-  When power on or resuming from suspend or hibernate, I want Bluetooth to be turned off.
+  When powering on or resuming from suspend or hibernate, I want Bluetooth to be turned off by default.
   Bluetooth should be activated manually only.
   When no bluetooth device is connected for more than X minutes, I want Bluetooth to be deactivated.
   
