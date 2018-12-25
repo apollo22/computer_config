@@ -135,8 +135,8 @@
 
   # Install Radio Device Wizard (requires NetworkManager)
   pacman -S tlp-rdw
-  systemctl enable NetworkManager-dispatecher.service
-  systemctl start NetworkManager-dispatecher.service
+  systemctl enable NetworkManager-dispatcher.service
+  systemctl start NetworkManager-dispatcher.service
 
   # Configure tlp: /etc/default/tlp
 
