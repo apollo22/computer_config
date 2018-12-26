@@ -127,6 +127,11 @@ pacman -S clusterssh
   # Install tree
   pacman -S tree
 
+# Maths
+  bc
+  galculator
+  kcalc
+
 # Interfaces with other devices
   # Android
   pacman -S android-tools
