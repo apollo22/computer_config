@@ -75,6 +75,7 @@ aurman -S cht.sh
 
 # Install network tools
 pacmac -S tcpdump mtr traceroute curl wget
+wol
 
 ntp nmap
 dnsmasq
