@@ -6,16 +6,16 @@
 
   # Packages installed during post installation (refer to post_installation.md)
     # Network manager
-      pacman -S networkmanager
+      pacman --noconfirm -S networkmanager
     # GUI
-      pacman -S xorg
-      pacman -S xorg-xinit
-      pacman -S xf86-input-libinput
-      pacman -S i3 dmenu
+      pacman --noconfirm -S xorg
+      pacman --noconfirm -S xorg-xinit
+      pacman --noconfirm -S xf86-input-libinput
+      pacman --noconfirm -S i3 dmenu
     # Terminal and terminal utilities
-      pacman -S xterm
-      pacman -S terminator
-      pacman -S tmux screen
+      pacman --noconfirm -S xterm
+      pacman --noconfirm -S terminator
+      pacman --noconfirm -S tmux screen
 
     # Install AUR Helper: aurman
       # Install PGP key for aurman
@@ -31,30 +31,30 @@
         rm -rf aurman-git/
 
     # Bluetooth audio
-      pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+      pacman --noconfirm -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
       systemctl enable --now bluetooth
 
     # fcron
-      pacman -S fcron
+      pacman --noconfirm -S fcron
       # systemctl enable --now fcron
 
     # Serial console
-      pacman -S minicom
+      pacman --noconfirm -S minicom
 
     # Install printers drivers
-      pacman -S cups cups-pdf # cups-pdf allows to print to pdf
+      pacman --noconfirm -S cups cups-pdf # cups-pdf allows to print to pdf
       systemctl enable --now org.cups.cupsd.service
 
       # Zero Configuration Networking
         # Install Avahi
-        pacman -S avahi
+        pacman --noconfirm -S avahi
 
       # Enable printers discovery
         systemctl enable --now cups-browsed
 
     # Install tlp for power saving
       # Install and configure tlp (requires NetworkManager by default)
-      pacman -S tlp
+      pacman --noconfirm -S tlp
       systemctl enable --now tlp.service
       systemctl enable --now tlp-sleep.service
 
@@ -63,116 +63,116 @@
       systemctl mask systemd-rfkill.socker
 
       # Install Radio Device Wizard (requires NetworkManager)
-      pacman -S tlp-rdw
+      pacman --noconfirm -S tlp-rdw
       systemctl enable --now NetworkManager-dispatcher.service
 
 
 # Install web browser
-pacman -S firefox
+pacman --noconfirm -S firefox
 
 # Install documents editors
-  pacman -S libreoffice
-  pacman -S gimp # Raster Image Editor
-  pacman -S inkscape # Vector Image Editor
-  pacman -S okular # PDF Reader
-  pacman -S ark # Archive Manager
-  pacman -S ranger # Terminal file explorer
+  pacman --noconfirm -S libreoffice
+  pacman --noconfirm -S gimp # Raster Image Editor
+  pacman --noconfirm -S inkscape # Vector Image Editor
+  pacman --noconfirm -S okular # PDF Reader
+  pacman --noconfirm -S ark # Archive Manager
+  pacman --noconfirm -S ranger # Terminal file explorer
 
-  pacman -S pandoc # Document converter
-  pacman -S texlive-most # Tex tools (~2GiB)
+  pacman --noconfirm -S pandoc # Document converter
+  pacman --noconfirm -S texlive-most # Tex tools (~2GiB)
 
   # Install pdf editor
-  pacman -S pdfsam
-  pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
+  pacman --noconfirm -S pdfsam
+  pacman --noconfirm -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
 
 # Other packages
-pacman -S thunderbird
-pacman -S openssh
-pacman -S putty # (useful to convert ppk keys)
-pacman -S keepassxc
-pacman -S alsamixer # ? Never used
-pacman -S lsof
-pacman -S python
-pacman -S pidgin # ? Never used
-pacman -S openvpn
-pacman -S acpi
+pacman --noconfirm -S thunderbird
+pacman --noconfirm -S openssh
+pacman --noconfirm -S putty # (useful to convert ppk keys)
+pacman --noconfirm -S keepassxc
+pacman --noconfirm -S alsamixer # ? Never used
+pacman --noconfirm -S lsof
+pacman --noconfirm -S python
+pacman --noconfirm -S pidgin # ? Never used
+pacman --noconfirm -S openvpn
+pacman --noconfirm -S acpi
 
 # Xorg additional tools
   # xautolock: fire up programs in case of user inactivity under X
-  pacman -S xautolock
+  pacman --noconfirm -S xautolock
 
 # Remote desktop
-pacman -S x11vnc # VNC Server for current X monitors
-pacman -S remmina # Remote Desktop viewer (VNC, 
-pacman -S freerdp # RDP Viewer, allowd remmina to use RDP
+pacman --noconfirm -S x11vnc # VNC Server for current X monitors
+pacman --noconfirm -S remmina # Remote Desktop viewer (VNC, 
+pacman --noconfirm -S freerdp # RDP Viewer, allowd remmina to use RDP
 
 # Medias
-  pacman -S vlc
-  pacman -S clementine
+  pacman --noconfirm -S vlc
+  pacman --noconfirm -S clementine
 
 # Install tldr
-pacman -S tldr
+pacman --noconfirm -S tldr
 aurman -S cht.sh
 
 # Install network tools
-pacman -S curl wget # Even though they are already installed
-pacman -S tcpdump mtr traceroute
-pacman -S wol
+pacman --noconfirm -S curl wget # Even though they are already installed
+pacman --noconfirm -S tcpdump mtr traceroute
+pacman --noconfirm -S wol
 
-pacman -S ntp nmap
-pacman -S dnsmasq
-pacman -S ldns # Contains drill and ldns
-pacman -S bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
-pacman -S vnstat # Network traffic monitoring
+pacman --noconfirm -S ntp nmap
+pacman --noconfirm -S dnsmasq
+pacman --noconfirm -S ldns # Contains drill and ldns
+pacman --noconfirm -S bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
+pacman --noconfirm -S vnstat # Network traffic monitoring
 
-pacman -S smartmontools 
+pacman --noconfirm -S smartmontools 
 
 # Install rsync
-pacman -S rsync
+pacman --noconfirm -S rsync
 
 # Install youtube-dl
-pacman -S youtube-dl
+pacman --noconfirm -S youtube-dl
 
 # Install netcat
-  pacman -S gnu-netcat
+  pacman --noconfirm -S gnu-netcat
 
 # Install clusterssh
-pacman -S clusterssh
+pacman --noconfirm -S clusterssh
 
 # Install newsboat (news agregator rss/atom)
-  pacman -S newsboat
+  pacman --noconfirm -S newsboat
 
 # Install units (units converter)
-  pacman -S units
+  pacman --noconfirm -S units
 
 # Other installs
   # Install GnuPG
-  pacman -S gnupg
+  pacman --noconfirm -S gnupg
   # Install screenshot softwares
-  pacman -S flameshot
-  pacman -S deepin-screenshot
+  pacman --noconfirm -S flameshot
+  pacman --noconfirm -S deepin-screenshot
   # Install tree
-  pacman -S tree
+  pacman --noconfirm -S tree
 
 # Maths
-  pacman -S bc
-  pacman -S galculator
-  pacman -S kcalc
+  pacman --noconfirm -S bc
+  pacman --noconfirm -S galculator
+  pacman --noconfirm -S kcalc
 
 # Interfaces with other devices
   # Android
-  pacman -S android-tools
+  pacman --noconfirm -S android-tools
 
 # Install progress (coreutils progress viewer: cp, dd, mv, ...)
-  pacman -S progress
+  pacman --noconfirm -S progress
 
 # Install barcode generators and readers
   # Console
   aurman -S ttryqr-git # In terminal (no file) qrcode generation
   # GUI
   aurman -S qtqr    # Best QR code generator
-  pacman -S zint-qt # Best barcodes generator
-  pacman -S zbar-qt # Read bar codes from webcam
+  pacman --noconfirm -S zint-qt # Best barcodes generator
+  pacman --noconfirm -S zbar-qt # Read bar codes from webcam
   aurman -S qrab    # Read qrcodes from screen
 
 # Install gitkraken
@@ -181,7 +181,7 @@ pacman -S clusterssh
   aurman -S up
 
 # dateutils
-  pacman -S dateutils
+  pacman --noconfirm -S dateutils
 
 # Docker
-  pacman -S docker
+  pacman --noconfirm -S docker
