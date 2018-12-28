@@ -45,16 +45,16 @@ pacman -S firefox
   pacman -S pdfshuffler # To reorganise a PDF (rotate, crop and move)
 
 # Other packages
-thunderbird
-openssh
-putty (useful to convert ppk keys)
-keepassxc
-alsamixer ?
-lsof ?
-python
-pidgin
-openvpn
-acpi
+pacman -S thunderbird
+pacman -S openssh
+pacman -S putty # (useful to convert ppk keys)
+pacman -S keepassxc
+pacman -S alsamixer # ? Never used
+pacman -S lsof
+pacman -S python
+pacman -S pidgin # ? Never used
+pacman -S openvpn
+pacman -S acpi
 
 # Xorg additional tools
   # xautolock: fire up programs in case of user inactivity under X
@@ -74,16 +74,17 @@ pacman -S tldr
 aurman -S cht.sh
 
 # Install network tools
-pacmac -S tcpdump mtr traceroute curl wget
-wol
+pacman -S curl wget # Even though they are already installed
+pacman -S tcpdump mtr traceroute
+pacman -S wol
 
-ntp nmap
-dnsmasq
-ldns # Contains drill and ldns
-bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
-vnstat # Network traffic monitoring
+pacman -S ntp nmap
+pacman -S dnsmasq
+pacman -S ldns # Contains drill and ldns
+pacman -S bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
+pacman -S vnstat # Network traffic monitoring
 
-smartmontools 
+pacman -S smartmontools 
 
 # Install rsync
 pacman -S rsync
@@ -108,7 +109,7 @@ pacman -S youtube-dl
     systemctl start cups-browsed
 
 # Install netcat
-pacman -S gnu-netcat
+  pacman -S gnu-netcat
 
 # Install clusterssh
 pacman -S clusterssh
@@ -129,9 +130,9 @@ pacman -S clusterssh
   pacman -S tree
 
 # Maths
-  bc
-  galculator
-  kcalc
+  pacman -S bc
+  pacman -S galculator
+  pacman -S kcalc
 
 # Interfaces with other devices
   # Android
@@ -155,7 +156,7 @@ pacman -S clusterssh
   aurman -S up
 
 # dateutils
-pacman -S dateutils
+  pacman -S dateutils
 
 # Docker
-pacman -S docker
+  pacman -S docker
