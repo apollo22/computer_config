@@ -5,9 +5,9 @@
 
 # Connect to WIFI with NetworkManager
   pacman -S networkmanager
-  systemctl enable NetworkManager
-  systemctl start NetworkManager
-  nmcli dev wifi connect <ssid> password <password>
+  systemctl enable --now NetworkManager
+  # To connect to a wifi network
+  # nmcli dev wifi connect <ssid> password <password>
 
 # Enable hibernation
   # Configure kernel parameter
@@ -76,19 +76,13 @@
 # Install serial console
   pacman -S minicom
 
-# Install Cron
-  pacman -S fcron
-  systemctl enable fcron
-  systemctl start fcron
-
 # Configure fonts
   fontconfig
 
 # For bluetooth headset
   # Requires pulseaudio-alsa
   pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
-  systemctl enable bluetooth
-  systemctl start bluetooth
+  systemctl enable --now bluetooth
 
   # Add the following to '/etc/pulse/default.pa'
     # Automatically switch to newly-connected devices
@@ -109,8 +103,7 @@
 
 # # Install printers drivers
   pacman -S cups cups-pdf # cups-pdf allows to print to pdf
-  systemctl enable org.cups.cupsd.service
-  sytemctl start org.cups.cupsd.service
+  systemctl enable --now org.cups.cupsd.service
   # To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
   # Add 'wheel' group to cups admin
   sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
@@ -120,8 +113,7 @@
     pacman -S avahi
 
   # Enable printers discovery
-    systemctl enable cups-browsed
-    systemctl start cups-browsed
+    systemctl enable --now cups-browsed
 
 # Install tlp for power saving
   # Install and configure tlp (requires NetworkManager by default)
@@ -135,9 +127,6 @@
 
   # Install Radio Device Wizard (requires NetworkManager)
   pacman -S tlp-rdw
-  systemctl enable NetworkManager-dispatcher.service
-  systemctl start NetworkManager-dispatcher.service
+  systemctl enable --now NetworkManager-dispatcher.service
 
   # Configure tlp: /etc/default/tlp
-
-
