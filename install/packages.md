@@ -1,30 +1,71 @@
 # Packages installed
 
   # Packages installed during installation (refer to initial_installation.md)
-    pacman -S pacman-contrib # Contains /usr/bin/rankmirrors
-    pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog wget curl elinks
+    # pacman -S pacman-contrib # Contains /usr/bin/rankmirrors
+    # pacstrap /mnt base base-devel intel-ucode zsh gvim git wpa_supplicant dialog wget curl elinks
 
   # Packages installed during post installation (refer to post_installation.md)
-    [P] networkmanager
-    [P] xorg
-    [P] xorg-xinit
-    [P] xf86-input-libinput
-    [P] i3 dmenu
-    [P] xterm
-    [P] terminator
-    [P] tmux screen
-    [DPKG] aurman
+    # Network manager
+      pacman -S networkmanager
+    # GUI
+      pacman -S xorg
+      pacman -S xorg-xinit
+      pacman -S xf86-input-libinput
+      pacman -S i3 dmenu
+    # Terminal and terminal utilities
+      pacman -S xterm
+      pacman -S terminator
+      pacman -S tmux screen
 
-    [P] pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+    # Install AUR Helper: aurman
+      # Install PGP key for aurman
+        wget https://github.com/polygamma.gpg
+        gpg --import polygamma.gpg
+        rm polygamma.gpg
 
+      # Install aurman
+        git clone https://aur.archlinux.org/aurman-git.git
+        cd aurman-git/
+        makepkg -si --needed --noconfirm # -s: install missing dependencies, -i: install, --needed: do not reinstall up-to-date targets
+        cd ..
+        rm -rf aurman-git/
 
-# Install serial console
-  pacman -S minicom
+    # Bluetooth audio
+      pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+      systemctl enable --now bluetooth
 
-# Install Cron
-  pacman -S fcron
-  systemctl enable fcron
-  systemctl start fcron
+    # fcron
+      pacman -S fcron
+      # systemctl enable --now fcron
+
+    # Serial console
+      pacman -S minicom
+
+    # Install printers drivers
+      pacman -S cups cups-pdf # cups-pdf allows to print to pdf
+      systemctl enable --now org.cups.cupsd.service
+
+      # Zero Configuration Networking
+        # Install Avahi
+        pacman -S avahi
+
+      # Enable printers discovery
+        systemctl enable --now cups-browsed
+
+    # Install tlp for power saving
+      # Install and configure tlp (requires NetworkManager by default)
+      pacman -S tlp
+      systemctl enable --now tlp.service
+      systemctl enable --now tlp-sleep.service
+
+      # Avoid conflicts
+      systemctl mask systemd-rfkill.service
+      systemctl mask systemd-rfkill.socker
+
+      # Install Radio Device Wizard (requires NetworkManager)
+      pacman -S tlp-rdw
+      systemctl enable --now NetworkManager-dispatcher.service
+
 
 # Install web browser
 pacman -S firefox
@@ -91,22 +132,6 @@ pacman -S rsync
 
 # Install youtube-dl
 pacman -S youtube-dl
-
-# Install printers drivers
-  pacman -S cups cups-pdf # cups-pdf allows to print to pdf
-  systemctl enable org.cups.cupsd.service
-  sytemctl start org.cups.cupsd.service
-  # To change where cups-pdf saves files, edit "/etc/cups/cups-pdf.conf"
-  # Add 'wheel' group to cups admin
-  sed -i '/SystemGroup/ s/$/ wheel/' /etc/cups/cups-files.conf
-
-  # Zero Configuration Networking
-    # Install Avahi
-    pacman -S avahi
-
-  # Enable printers discovery
-    systemctl enable cups-browsed
-    systemctl start cups-browsed
 
 # Install netcat
   pacman -S gnu-netcat
