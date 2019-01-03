@@ -118,6 +118,7 @@ aurman -S cht.sh
 pacman --noconfirm -S curl wget # Even though they are already installed
 pacman --noconfirm -S tcpdump mtr traceroute
 pacman --noconfirm -S wol
+pacman --noconfirm -S nftables
 
 pacman --noconfirm -S ntp nmap
 pacman --noconfirm -S dnsmasq
