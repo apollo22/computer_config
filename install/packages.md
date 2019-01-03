@@ -186,3 +186,6 @@ pacman --noconfirm -S clusterssh
 
 # Docker
   pacman --noconfirm -S docker
+
+# entr
+  pacman --noconfirm -S entr
