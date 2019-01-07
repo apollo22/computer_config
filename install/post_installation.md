@@ -68,6 +68,9 @@
       # Configure xinitrc
         # Add exec i3
 
+  # Configure i3status for local usage
+    cp /etc/i3status.conf ~/.config/i3status/config
+
 # Install terminal and terminal utilities
   pacman -S xterm
   pacman -S terminator
