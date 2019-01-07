@@ -4,10 +4,12 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
 
 ## Visible files
 
-  - **Downloads**: my downloads
+  - **downloads**: my downloads
   - **documents**: my documents
-    - **medias**: every medias I own
-      - **music**: my music files
+    - **medias**: unsorted medias and music
+      - **music**: my music
+      - **pictures**: unsorted pictures
+      - **videos**: unsorted videos
     - **personal_documents**: my personal documents
     - **private_documents**: my private documents
       - **computer_files**: all my computer related files
@@ -20,11 +22,9 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
       - **learning_documents**: documents to learn about various subjects
           - **softwares_documentation**: all my software documentation
       - **public_projects_documents**
+    - playground: this is a folder where I can do anything
 
 ## Hidden files
 
   - **.config**: my config / dot files
   - **.ssh**: my ssh keys
-
-# Notes
-About **~/documents** and **~/Downloads**, the second one is with an uppercase letter so that I can just type 'D' to autocomplete and not 'Dow'.
