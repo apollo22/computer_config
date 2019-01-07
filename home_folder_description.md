@@ -8,6 +8,7 @@ My entire $HOME folder is backed up and synchronised between my computers (alhou
   - **documents**: my documents
     - **medias**: unsorted medias and music
       - **music**: my music
+      - **images**: sorted images
       - **pictures**: unsorted pictures
         - **screenshots**: unsorted screenshots
       - **videos**: unsorted videos
