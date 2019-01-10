@@ -133,3 +133,17 @@
   systemctl enable --now NetworkManager-dispatcher.service
 
   # Configure tlp: /etc/default/tlp
+
+# Install redshift to control screen temperature and brightness
+  pacman -S redshift
+
+  # Get default configuration file
+  mkdir -p ~/.config/redshift
+  curl https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample > ~/.config/redshift/redshift.conf
+
+  # Allow automatic location based on GeoClue2
+  echo -e "[redshift]\nallowed=true\nsystem=false\nusers=" >> /etc/geoclue/geoclue.conf
+  sed -i "s/location-provider=.*/location-provider=geoclue2/" ~/.config/redshift/redshift.conf
+
+  # Enable redshift
+  systemctl --user enable --now redshift
