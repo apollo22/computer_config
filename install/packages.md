@@ -66,6 +66,10 @@
       pacman --noconfirm -S tlp-rdw
       systemctl enable --now NetworkManager-dispatcher.service
 
+    # Install redshift to control screen temperature and brightness
+      pacman --noconfirm -S redshift
+      systemctl --user enable --now redshift 
+
 
 # Install web browser
 pacman --noconfirm -S firefox
