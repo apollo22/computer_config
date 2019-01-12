@@ -8,7 +8,34 @@
 
 ### VUNDLE
 I use vundle to manage my plugins
-To make Vundel compliant with XDG_BASE_DIRECTORY
+To make Vundel compliant with XDG_BASE_DIRECTORY, add the following:
+```
+" ---- Begin Vundle ----
+
+  " Delete any path in runtimepath (because of Vundle bad management)
+  set runtimepath=""
+
+  " Vundle Plugin Manager
+[...]
+
+  " set the runtime path to include Vundle and initialize
+  set rtp+=$XDG_CONFIG_HOME/vim/bundle/Vundle.vim
+  " call vundle#begin() " Keep Plugin commands between vundle#begin/end.
+  " alternatively, pass a path where Vundle should install plugins
+  call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
+[...]
+
+" Correct Vundle misuse of rtp
+  let $temp_runtimepath=&runtimepath
+  set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+  set runtimepath+=$temp_runtimepath
+
+" ---- End Vundle ----
+```
+
+## Spell Checking
+If using XDG BASE DIRECTORY, do not forget to create the $XDG_CONFIG_HOME/vim/spell directory:
+``` mkdir -p $XDG_BASE_DIRECTORY/vim/spell ```
 
 ## Features
   indent columns
