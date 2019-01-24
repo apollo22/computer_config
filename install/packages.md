@@ -31,8 +31,13 @@
         rm -rf aurman-git/
 
     # Bluetooth audio
-      pacman --noconfirm -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+      pacman --noconfirm -S bluez-utils
       systemctl enable --now bluetooth
+      # Bluetooth GUI
+      pacman --noconfirm -S blueman
+
+    # Audio
+      pacman --noconfirm -S pulseaudio-alsa pulseaudio-bluetooth
 
     # fcron
       pacman --noconfirm -S fcron
@@ -129,6 +134,7 @@ pacman --noconfirm -S dnsmasq
 pacman --noconfirm -S ldns # Contains drill and ldns
 pacman --noconfirm -S bind-tools # Can be installed as dnsutils, contains dig and ns-lookup. 'host' can also perform dns lookup
 pacman --noconfirm -S vnstat # Network traffic monitoring
+pacman --noconfirm -S usbip # IP network over USB 
 
 pacman --noconfirm -S smartmontools 
 
@@ -193,3 +199,6 @@ pacman --noconfirm -S clusterssh
 
 # entr
   pacman --noconfirm -S entr
+
+# Colored cat
+  pacman --noconfirm -S pygmentize
