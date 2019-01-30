@@ -10,7 +10,7 @@ The following files are my ssh client configuration files :
 ```
 /etc/ssh/ssh_config: I don't use this file
 ~/
-  .ssh/config doesn't exist (See 'SSH XDG_BASE_DIRECTORY')
+  .ssh/config: includes ~/.config/ssh/config . Has to be there because other executables use it.
   .config/ssh/
     config: references public, private and temp configuration files.
     known_hosts: list of known hosts
@@ -50,7 +50,7 @@ To understand OpenSSH ssh server configuration file, check ```man sshd_config```
 
 Several files are used by ssh
   - ~/.ssh/config: You can do it 3 different ways
-    - either add `Include ~/.config/ssh/config` in ~/.ssh/config. This is better as this doesn't break other executables using the default ssh command.
+    - either add `Include ~/.config/ssh/config` in ~/.ssh/config. This is better as this doesn't break other executables using the default ssh command (for exemple git).
     - or add the following in your bashrc (allows you to remove ~/.ssh/config)
     ```
     SSH_CONFIG_FILE=${XDG_CONFIG_HOME}/ssh/config
@@ -73,3 +73,28 @@ Several files are used by ssh
     ```
   - ~/.ssh/known_hosts
     - Add `UserKnownHostsFile <your XDG_CONFIG_HOME>/ssh/known_hosts` to your ssh config file
+
+## Auto add SSH Key to connect servers
+When I connect to a server, my machine public key is automatically added. To do that, I use the following ssh config:
+```
+PermitLocalCommand yes
+LocalCommand ssh-copy-id -i /home/jdorel/.config/ssh/machine-keys/id-rsa-4096.pub -p %p -o "PermitLocalCommand=no" %r@%h &> /dev/null &
+```
+
+## Disable HostKey checking for IPs on private network, when called from IP.
+'''
+# Disable HostKey checking for private networks
+Host 10.* 192.168.*.* 172.31.* 172.30.* 172.2?.* 172.1?.*
+  User root
+  # Trust HostKey automatically
+  StrictHostKeyChecking no
+  # Do not save the HostKey
+  UserKnownHostsFile /dev/null
+  # Do not display: "Warning: Permanently Added ..."
+  LogLevel Error
+'''
+
+## Other
+Changer terminal color based on host
+Push local config (vim and bash)
+  If not jdorel --> create jdorel folder and set as home folder
