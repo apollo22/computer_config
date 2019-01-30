@@ -97,6 +97,7 @@ pacman --noconfirm -S firefox
 # Other packages
 pacman --noconfirm -S thunderbird
 pacman --noconfirm -S openssh
+pacman --noconfirm -S sshfs
 pacman --noconfirm -S putty # (useful to convert ppk keys)
 pacman --noconfirm -S keepassxc
 pacman --noconfirm -S alsamixer # ? Never used
