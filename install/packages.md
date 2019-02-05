@@ -30,6 +30,8 @@
         cd ..
         rm -rf aurman-git/
 
+        AUR_INSTALLER=aurman
+
     # Bluetooth audio
       pacman --noconfirm -S bluez-utils
       systemctl enable --now bluetooth
@@ -122,7 +124,7 @@ pacman --noconfirm -S freerdp # RDP Viewer, allowd remmina to use RDP
 
 # Install tldr
 pacman --noconfirm -S tldr
-aurman -S cht.sh
+$AUR_INSTALLER -S cht.sh
 
 # Install network tools
 pacman --noconfirm -S curl wget # Even though they are already installed
@@ -180,23 +182,29 @@ pacman --noconfirm -S clusterssh
 
 # Install barcode generators and readers
   # Console
-  aurman -S ttryqr-git # In terminal (no file) qrcode generation
+  $AUR_INSTALLER -S ttryqr-git # In terminal (no file) qrcode generation
   # GUI
-  aurman -S qtqr    # Best QR code generator
+  $AUR_INSTALLER -S qtqr    # Best QR code generator
   pacman --noconfirm -S zint-qt # Best barcodes generator
   pacman --noconfirm -S zbar-qt # Read bar codes from webcam
-  aurman -S qrab    # Read qrcodes from screen
+  $AUR_INSTALLER -S qrab    # Read qrcodes from screen
 
 # Install gitkraken
-  aurman -S gitkraken
+  $AUR_INSTALLER -S gitkraken
 # Install up (shell pipe preview)
-  aurman -S up
+  $AUR_INSTALLER -S up
 
 # dateutils
   pacman --noconfirm -S dateutils
 
-# Docker
-  pacman --noconfirm -S docker
+# Runtime Environments
+  # Docker
+    pacman --noconfirm -S docker
+
+  # VirtualBox
+    pacman --noconfirm -S virtualbox-host-modules-arch
+    # If using a live installation, you need to do `modprobe vboxdrv`
+    $AUR_INSTALLER -S virtualbox-ext-oracle
 
 # entr
   pacman --noconfirm -S entr
