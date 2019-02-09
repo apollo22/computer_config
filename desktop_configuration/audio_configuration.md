@@ -23,6 +23,8 @@ See media control
 
 ## Auto mute audio on bluetooth audio disconnect
 
+Doesn't work now because of pulseaudio access denied
+
 bluetooth-headset-disconnects.sh
 '''
 next_line_is_status=0
