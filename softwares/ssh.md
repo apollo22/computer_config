@@ -81,6 +81,8 @@ PermitLocalCommand yes
 LocalCommand ssh-copy-id -i /home/jdorel/.config/ssh/machine-keys/id-rsa-4096.pub -p %p -o "PermitLocalCommand=no" %r@%h &> /dev/null &
 ```
 
+I moved this to the ssh_connect script
+
 ## Disable HostKey checking for IPs on private network, when called from IP.
 '''
 # Disable HostKey checking for private networks
