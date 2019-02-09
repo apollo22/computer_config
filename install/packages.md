@@ -223,3 +223,9 @@ pacman --noconfirm -S clusterssh
 
 # Git tools
   $AUR_INSTALLER -S grv
+
+# Better LS
+  pacman -S lsd
+
+  # Install related fonts
+  $AUR_INSTALLER -S nerd-font-complete
