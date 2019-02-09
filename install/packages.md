@@ -47,6 +47,7 @@
 
     # Serial console
       pacman --noconfirm -S minicom
+      pacman --noconfirm -S picocom
 
     # Install printers drivers
       pacman --noconfirm -S cups cups-pdf # cups-pdf allows to print to pdf
@@ -211,3 +212,14 @@ pacman --noconfirm -S clusterssh
 
 # Colored cat
   pacman --noconfirm -S pygmentize
+
+# DB
+  ## SQL
+  # GUI
+  pacman --noconfirm -S sqlitebrowser
+  pacman --noconfirm -S dbeaver
+  # CLI
+  $AUR_INSTALLER -S mycli
+
+# Git tools
+  $AUR_INSTALLER -S grv
