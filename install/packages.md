@@ -7,6 +7,7 @@
   # Packages installed during post installation (refer to post_installation.md)
     # Network manager
       pacman --noconfirm -S networkmanager
+      pacman --noconfirm -S nm-connection-editor
     # GUI
       pacman --noconfirm -S xorg
       pacman --noconfirm -S xorg-xinit
@@ -81,6 +82,7 @@
 
 # Install web browser
 pacman --noconfirm -S firefox
+pacman --noconfirm -S chromium 
 
 # Install documents editors
   pacman --noconfirm -S libreoffice
@@ -99,16 +101,27 @@ pacman --noconfirm -S firefox
 
 # Other packages
 pacman --noconfirm -S thunderbird
-pacman --noconfirm -S openssh
-pacman --noconfirm -S sshfs
 pacman --noconfirm -S putty # (useful to convert ppk keys)
 pacman --noconfirm -S keepassxc
 pacman --noconfirm -S alsamixer # ? Never used
 pacman --noconfirm -S lsof
-pacman --noconfirm -S python
 pacman --noconfirm -S pidgin # ? Never used
 pacman --noconfirm -S openvpn
 pacman --noconfirm -S acpi
+
+# xrandr GUI
+pacman --noconfirm -S arandr
+
+# Python
+# Keep the two first in case of package drop
+pacman --noconfirm -S python
+pacman --noconfirm -S python-pip
+pacman --noconfirm -S python-pipenv
+
+# SSH related
+pacman --noconfirm -S openssh
+pacman --noconfirm -S sshfs
+pacman --noconfirm -S clusterssh
 
 # Xorg additional tools
   # xautolock: fire up programs in case of user inactivity under X
@@ -121,17 +134,23 @@ pacman --noconfirm -S freerdp # RDP Viewer, allowd remmina to use RDP
 
 # Medias
   pacman --noconfirm -S vlc
+
+  # Music player
   pacman --noconfirm -S clementine
+  pacman --noconfirm -S lollypop
 
 # Install tldr
 pacman --noconfirm -S tldr
-$AUR_INSTALLER -S cht.sh
+$AUR_INSTALLER --noconfirm -S cht.sh
 
 # Install network tools
 pacman --noconfirm -S curl wget # Even though they are already installed
 pacman --noconfirm -S tcpdump mtr traceroute
 pacman --noconfirm -S wol
 pacman --noconfirm -S nftables
+pacman --noconfirm -S wireshark-qt
+
+pacman --noconfirm -S dhcp
 
 pacman --noconfirm -S ntp nmap
 pacman --noconfirm -S dnsmasq
@@ -147,12 +166,10 @@ pacman --noconfirm -S rsync
 
 # Install youtube-dl
 pacman --noconfirm -S youtube-dl
+$AUR_INSTALLER --noconfirm -S gydl-git
 
 # Install netcat
   pacman --noconfirm -S gnu-netcat
-
-# Install clusterssh
-pacman --noconfirm -S clusterssh
 
 # Install newsboat (news agregator rss/atom)
   pacman --noconfirm -S newsboat
@@ -169,6 +186,9 @@ pacman --noconfirm -S clusterssh
   # Install tree
   pacman --noconfirm -S tree
 
+# PV
+  pacman --noconfirm -S pv
+
 # Maths
   pacman --noconfirm -S bc
   pacman --noconfirm -S galculator
@@ -183,17 +203,17 @@ pacman --noconfirm -S clusterssh
 
 # Install barcode generators and readers
   # Console
-  $AUR_INSTALLER -S ttryqr-git # In terminal (no file) qrcode generation
+  $AUR_INSTALLER --noconfirm -S ttryqr-git # In terminal (no file) qrcode generation
   # GUI
-  $AUR_INSTALLER -S qtqr    # Best QR code generator
+  $AUR_INSTALLER --noconfirm --noconfirm --noconfirm --noconfirm --noconfirm --noconfirm --noconfirm --noconfirm --noconfirm -S qtqr    # Best QR code generator
   pacman --noconfirm -S zint-qt # Best barcodes generator
   pacman --noconfirm -S zbar-qt # Read bar codes from webcam
-  $AUR_INSTALLER -S qrab    # Read qrcodes from screen
+  $AUR_INSTALLER --noconfirm -S qrab    # Read qrcodes from screen
 
 # Install gitkraken
-  $AUR_INSTALLER -S gitkraken
+  $AUR_INSTALLER --noconfirm -S gitkraken
 # Install up (shell pipe preview)
-  $AUR_INSTALLER -S up
+  $AUR_INSTALLER --noconfirm -S up
 
 # dateutils
   pacman --noconfirm -S dateutils
@@ -205,7 +225,7 @@ pacman --noconfirm -S clusterssh
   # VirtualBox
     pacman --noconfirm -S virtualbox-host-modules-arch
     # If using a live installation, you need to do `modprobe vboxdrv`
-    $AUR_INSTALLER -S virtualbox-ext-oracle
+    $AUR_INSTALLER --noconfirm -S virtualbox-ext-oracle
 
 # entr
   pacman --noconfirm -S entr
@@ -219,13 +239,42 @@ pacman --noconfirm -S clusterssh
   pacman --noconfirm -S sqlitebrowser
   pacman --noconfirm -S dbeaver
   # CLI
-  $AUR_INSTALLER -S mycli
+  $AUR_INSTALLER --noconfirm -S mycli
 
 # Git tools
-  $AUR_INSTALLER -S grv
+  $AUR_INSTALLER --noconfirm -S grv
 
 # Better LS
-  pacman -S lsd
+  pacman --noconfirm -S lsd
 
-  # Install related fonts
-  $AUR_INSTALLER -S nerd-font-complete
+# Install related fonts
+$AUR_INSTALLER --noconfirm -S nerd-font-complete
+
+pacman -S ansible
+$AUR_INSTALLER --noconfirm -S quickserve
+
+# xdotool, useful for shortcuts from i3
+pacman --noconfirm -S xdotool
+
+# vim
+  pacman --noconfirm -S vim
+  pacman --noconfirm -S gvim
+  pacman --noconfirm -S vim-syntastic
+
+# Pip
+  pacman --noconfirm -S python-jinja
+  pacman --noconfirm -S python-yaml
+  pacman --noconfirm -S python-pyserial
+
+# Hardware devellopement
+  # Electronics
+  pacman --noconfirm -S kicad
+
+  # SBC: device tree compiler
+  pacman --noconfirm -S dtc
+
+  # Firmware: Defice Firmware Upgrade
+  pacman --noconfirm -S dfu-util
+
+# Backlight
+  pacman --noconfirm -S acpilight
