@@ -70,3 +70,25 @@ Describes my system and holds my configuration files in **config_files** folder.
       - Install libvncserver for VNC support and freerdp for RDP support
   - Auto mounting some devices
     - USB Disks
+
+
+## Future structure
+
+```
+# Desktop configuration
+This section aims to describe the way I want to interact with my computers, the functions I wish to implement. It does not document any configuration.
+
+I also explain here what program I currently use for these functions.
+
+# Applications
+This sections aims to describe the ways I want to interact with some specific programs, for exemple RSS. It does not document any configuration.
+
+I also explain here what program I currently use for these applications.
+
+# Software
+This section document the way programs are configured.
+
+# Installation
+This section document how to make a fresh installation
+
+```
