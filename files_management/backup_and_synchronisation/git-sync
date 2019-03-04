@@ -1,0 +1,14 @@
+
+# Dotfiles and config repos
+
+I want one repo with everything
+I want a local branch
+I do not want to use symlinks ? Would cohabitate with new dotfiles
+
+Notify if contain cookie, cache, db or runtime, backup, old, dat
+
+# Repos auto commit
+
+# Repos auto squash
+
+# Repos merging
