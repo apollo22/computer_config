@@ -23,3 +23,23 @@ For exemple, if I have two computer and I want to access two services, I have 4 
 - Intel ME
 
 Do not mount unknown devices
+
+## User access to some services / applications / devices
+```
+# sudo
+group wheel
+
+# Wireshark
+group wireshark
+
+# serial ports
+group uucp
+
+# docker
+group docker
+/!\ Equivalent to giving root access
+
+# sigrok
+group usbtmc
+```
+
