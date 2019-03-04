@@ -34,3 +34,10 @@ EndSection
 ### RFC
 
 I download all RFCs in the background using cron. Will move to systemd timer and implement metered-connection dependency.
+
+## Serial access
+
+Add user to the uucp group:
+```
+usermod -a -G uucp <user>
+```
