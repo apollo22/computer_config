@@ -2,10 +2,15 @@
 
 ## Synchronisation using Firefox Sync
 
-## Translation services
-Use of keyword in bookmarks
+## Quick search
 
-http://www.wordreference.com/tools/Firefox-search-shortcut.aspx
+I have shortcuts when I want to search on specific websites
+For exemple, 'wiki archlinux' will get me to the archlinux page on wikipedia
+
+  ## Translation services
+  Use of keyword in bookmarks
+
+  http://www.wordreference.com/tools/Firefox-search-shortcut.aspx
 
 ## Prevent firefox from going fullscreen when fullscreen from i3
 
